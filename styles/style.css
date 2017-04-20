@@ -1,8 +1,32 @@
 body{
+    color: #222;
+    font: 14px/1.4 Arial, Helvetica, sans-serif;
+    padding: 0;
     margin: 0 auto;
+    -webkit-font-smoothing: subpixel-antialiased;
     background-image: url("../images/background.jpg");
+    
+    background-position: center center;
+
+    
     background-repeat: no-repeat;
-    background-size: 100%;
+
+    
+    background-attachment: fixed;
+
+    
+    background-size: cover;
+
+    
+    background-color: #464646;
+}
+
+.body-container {
+    width: 90%;
+    max-width: 1350px;
+    min-width: 500px;
+    margin: auto;
+    overflow: hidden;
 }
 
 .container {
@@ -13,7 +37,7 @@ body{
     border-radius: 4px;
     margin: 0 auto;
     margin-top: 100px;
-    
+
 
 }
 .searchbar{
@@ -30,7 +54,7 @@ body{
     width: 500px;border: none;
     font-size: 10pt;
     float: left;
-    color: #63717f;
+    color: #020202;
     padding-left: 45px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -39,7 +63,6 @@ body{
 
 .container img{
     width: 40%;
-    height: 20%;
 
 }
 
@@ -68,10 +91,10 @@ body{
 
 #btn1 {
     color:#fff;
-    background-color: #1E90FF;
+    background-color: #00b3aa;
 }
 #btn2 { 
-    color:#1E90FF;
+    color:#00b3aa;
     background-color: #fff;
 }
 #best{
@@ -87,19 +110,20 @@ body{
 
 }
 
-.batsifut{
-   position:absolute;
-   bottom:0;
-   width:500px;
-   height:40px;  
-   background:#6cf;
-   background-color: rgba(52,74,97,0);
-   padding-left: 30px;
+.lalaland{
+    position:absolute;
+    bottom:0;
+    width:500px;
+    height:40px;  
+    background:#6cf;
+    background-color: rgba(52,74,97,0);
+    padding-left: 30px;
 }
-.batsifut a{
+.lalaland a{
     display: inline-block;
     color: #fff;
     text-decoration: none;
+    text-shadow: 1px 1px 1px #888, -1px -1px 1px #888;
     font-size: 17px;
     padding-right: 5px;
     padding-left: 5px;
@@ -107,5 +131,106 @@ body{
     margin-right: 12px;
     font-weight: normal
 }
+
+#ipt{
+    padding: 15px 30px;
+    border-radius: 4px;
+    border: none;
+    height: 15px;
+    width: 240px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+#form2{
+    display: none;
+}
+#form3{
+    display: none;
+}
+
+
+@media only screen and (max-width: 767px){
+
+    .searchbar{
+
+        height: 40px;
+        width: 240px;
+        background-color: rgba(52,74,97,0);
+        padding: 10px;
+        padding-left: 50px;
+    }
+
+    #search{
+
+        background: #fff;
+        height: 33px;
+        width: 200px;border: none;
+        font-size: 10pt;
+        float: left;
+        color: #63717f;
+        padding-left: 45px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+
+    .container {
+        width: 260px;
+        height: 350px;
+        text-align: center;
+        background-color: rgba(52,74,97,0);
+        border-radius: 4px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }   
+    .btn {
+        padding: 15px 30px;
+        border-radius: 4px;
+        border: none;
+        height: 45px;
+        width: 250px;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+
+    .lalaland{
+        position:absolute;
+        bottom:0;
+        width:250px;
+        height:40px;  
+        background:#6cf;
+        background-color: rgba(52,74,97,0);
+        padding-left: 30px;
+    }
+
+
+    #ipt{
+        padding: 15px 30px;
+        border-radius: 4px;
+        border: none;
+        height: 15px;
+        width: 200px;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+
+    .lalaland a{
+        display: inline-block;
+        color: #fff;
+        text-decoration: none;
+        font-size: 13px;
+        padding-right: 5px;
+        padding-left: 5px;
+        margin-left: -5px;
+        margin-right: 12px;
+        font-weight: normal
+    }
+
+}
+
+
 
 
