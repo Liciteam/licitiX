@@ -24,7 +24,7 @@ body{
 .body-container {
     width: 90%;
     max-width: 1350px;
-
+    min-width: 500px;
     margin: auto;
     overflow: hidden;
 }
