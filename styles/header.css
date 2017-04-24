@@ -1,35 +1,21 @@
-/* Global */
-.container {
-    width: 80%;
-    max-width: 1350px;
-    min-width: 500px;
-    margin: auto;
-    overflow: hidden;
-}
-
-ul{
-    margin:0;
-    padding:0;
-}
-
 /* Header */
 
 header {
-	background: #FFFFFF;
-	min-height: 70px;
-
-	border-bottom: #AFAFAF 1px solid;
-	list-style: none;
+    list-style: none;
     border: 0 none;
     margin: 0;
     padding: 0;
+
+    background: #FFFFFF;
+    min-height: 70px;
+    border-bottom: #AFAFAF 1px solid;
 }
 
 header a {
-	/*color:rgb(234,158,0);*/
-	color: #666666;
-	text-decoration: none;
-	font-size: 16px;
+    /*color:rgb(234,158,0);*/
+    color: #666165;
+    text-decoration: none;
+    font-size: 16px;
 
 }
 
@@ -39,45 +25,45 @@ header a:hover, header a:focus, header a:active, header a.is-active {
 }
 
 header li{
-	float:left;
-	display:inline;
-	background: transparent;
-	padding: 0 10px 0 10px;
+    float:left;
+    display:inline;
+    background: transparent;
+    padding: 0 10px 0 10px;
 }
 
 header .nav-height, .nav-height>ul>li>.nav-link, .nav-height>ul>li>a  {
-	height: 85px;
+    height: 85px;
 }
 
 header #branding {
-	float: left;
+    float: left;
     width: 105px;
     
     margin-right: 20px;
 }
 
 header #branding a{
-	display: block;
-	width: 100%;
-	height: 100%;
-	background: url('../images/logo_licitix.png') transparent no-repeat center center;
-	background-size: 100%;
-	color: rgb(0,148,140);
-	margin-top: 2px;
-	text-indent: -10000em;	/*ca sa dispara scrisu */
-	overflow: hidden;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url('../images/logo_licitix.png') transparent no-repeat center center;
+    background-size: 100%;
+    color: rgb(0,148,140);
+    margin-top: 2px;
+    text-indent: -10000em;  /*ca sa dispara scrisu */
+    overflow: hidden;
 }
 
 
 header .account-nav{
-	float:right;
-	/*margin-top: 10px;*/
-	position: relative;
+    float:right;
+    /*margin-top: 10px;*/
+    position: relative;
     list-style: none;
     border: 0 none;
     margin: 0;
     padding: 0;
-	padding-left: 0;
+    padding-left: 0;
 }
 
 
@@ -98,7 +84,7 @@ header .account-nav>ul>li:first-child:before {
 }
 
 header .nav-link{
-	float: left;
+    float: left;
     display: block;
     font-size: 12px;
     text-align: center;
@@ -133,8 +119,11 @@ header .nav-link{
 
 
 
+/* TO DO - to implement a java script function that changes only the color of the png icons applying a mask over it */
+/* TO DO - to edit the sizes of the icons so it will be the same scale */
+
 .activity .nav-link .nav-icon {
-	background: url('../images/header/home.png') transparent no-repeat center center;
+    background: url('../images/header/home.png') transparent no-repeat center center;
     background-size: 70%;
 }
 
@@ -144,7 +133,7 @@ header .nav-link{
 }
 
 .favorites .nav-link .nav-icon {
-	background: url('../images/header/heart.png') transparent no-repeat center center;
+    background: url('../images/header/heart.png') transparent no-repeat center center;
     background-size: 45%;
 }
 
@@ -154,7 +143,7 @@ header .nav-link{
 }
 
 .user-nav .nav-link .nav-icon {
-	background: url('../images/header/profile.png') transparent no-repeat center center;
+    background: url('../images/header/profile.png') transparent no-repeat center center;
     background-size: 50%;
 }
 
@@ -164,7 +153,7 @@ header .nav-link{
 }
 
 .cart .nav-link .nav-icon {
-	background: url('../images/header/cart.png') transparent no-repeat center center;
+    background: url('../images/header/cart.png') transparent no-repeat center center;
     background-size: 90%;
 }
 
@@ -176,12 +165,79 @@ header .nav-link{
 
 
 /* Media Queries */
-@media(max-width: 768px){
-    header #branding,
-    header nav,
-    header nav li{
-        float:none;
-        text-align: center;
-        width: 100%;
+@media only screen and (max-width: 767px){
+
+    header .nav-height, .nav-height>ul>li>.nav-link, .nav-height>ul>li>a  {
+        height: 70px;
     }
+
+    header #branding {
+        width: 85px;
+        
+        margin-right: 5px;
+    }
+    header #branding a{
+        background: url('../images/icon.png') transparent no-repeat center center;
+        background-size: 50%;
+    }
+
+    header .account-nav>ul>li:before {
+        display: none;
+    }
+
+    header .nav-link{
+        padding: 0 0px;
+    }
+
+    .nav-link .text-link {
+        display: none;
+    }
+
+    .nav-link .nav-icon {
+        height: 32px;
+        width: auto;
+        min-width: 40px;
+        margin: 18px auto 0;
+    }
+
+    .activity .nav-link .nav-icon {
+        background: url('../images/header/home.png') transparent no-repeat center center;
+        background-size: 70%;
+    }
+
+    .activity .nav-link:hover .nav-icon, .activity .nav-link:focus .nav-icon {
+        background: url('../images/header/home1.png') transparent no-repeat center center;
+        background-size: 70%;
+    }
+
+    .favorites .nav-link .nav-icon {
+        background: url('../images/header/heart.png') transparent no-repeat center center;
+        background-size: 67%;
+    }
+
+    .favorites .nav-link:hover .nav-icon, .favorites .nav-link:focus .nav-icon {
+        background: url('../images/header/heart1.png') transparent no-repeat center center;
+        background-size: 67%;
+    }
+
+    .user-nav .nav-link .nav-icon {
+        background: url('../images/header/profile.png') transparent no-repeat center center;
+        background-size: 65%;
+    }
+
+    .user-nav .nav-link:hover .nav-icon, .user-nav .nav-link:focus .nav-icon {
+        background: url('../images/header/profile1.png') transparent no-repeat center center;
+        background-size: 65%;
+    }
+
+    .cart .nav-link .nav-icon {
+        background: url('../images/header/cart.png') transparent no-repeat center center;
+        background-size: 75%;
+    }
+
+    .cart .nav-link:hover .nav-icon, .cart .nav-link:focus .nav-icon {
+        background: url('../images/header/cart1.png') transparent no-repeat center center;
+        background-size: 75%;
+    }
+
 }
