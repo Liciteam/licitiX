@@ -1,20 +1,31 @@
 <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
-		<link rel="icon" href="images/icon.png" />
-		<title>LicitiX.com | Auction is life</title>
-		<meta name="description" content="Buy or sell all types of items in our online auction">
-		<meta name="keywords" content="auction site, auction online, buy, sell, auction shop">
-		<meta name="authors" content="Alexandru Rusu, Claudia Lucasi, Cristian Iacob">
+    <head>
+    	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width">
+        <link rel="icon" href="images/icon.png" />
+        <title>Items - LicitiX</title>
+        
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="Buy or sell all types of items in our online auction">
+        <meta name="keywords" content="auction site, auction online, buy, sell, auction shop">
+        <meta name="authors" content="Alexandru Rusu, Claudia Lucasi, Cristian Iacob">
 
 		<link rel="stylesheet" href="./styles/global.css" type="text/css"/>
 		<link rel="stylesheet" href="./styles/header.css" type="text/css"/>
 		<link rel="stylesheet" href="./styles/nav_bar.css" type="text/css"/>
-		<link rel="stylesheet" href="./styles/home.css" type="text/css"/>
-	</head>
-	<body>
+        <link rel="stylesheet" href="./styles/paginare.css" type="text/css"/>
+
+    </head>
+
+    <body>
+
+
 		<header>
 			<div class="container">
 				<div id="branding" class="nav-height">
@@ -57,10 +68,10 @@
 					</ul>
 				</nav>
 			</div>
-
 		</header>
 
-		<nav id="menubar">
+
+        <nav id="menubar">
 			<div class="container">
 	            <a href="paginare.html">Fashion</a>
 	            <a href="paginare.html">Electronics</a>
@@ -74,40 +85,69 @@
         	</div>
         </nav>
 
-		<section id="showcase">
-			<div class="container">
-				<h1>Find whatever you disire and take it!</h1>
-				<div id ="searchbar">
-            		<form>
-                		<input type="search" id="search" placeholder="What are you searching for?" />
-                		<button type="submit" class="search-button">Search</button>
-            		</form>
-        		</div>
-			</div>
-		</section>
+		<div class="container_item">
 
-		<section id="boxes">
-			<div class="container">
-				<div class="box">
-					<img src="./images/logo_html.png">
-					<h3>Html5 Markup</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
-				<div class="box">
-					<img src="./images/logo_css.png">
-					<h3>CSS3 Styling</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
-				<div class="box">
-					<img src="./images/logo_brush.png">
-					<h3>Graphic Design</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
-			</div>
-		</section>
+		  <div class="row">
+		    <div id="image">
+		    	<img src="images/item1.jpg" />
+		    </div>
+		    <div id="texts"> 
+		    	<h1>Title</h3>
+		    	<h2>Description</h2>
+		    	<h3>10.23$<h1>
+		    	<h3>Date<h1>
+		    </div>
+		  </div>
+		 
+		  <div class="row">
+		  	<div id="image">
+		    	<img src="images/item2.jpg" />
+		    </div>
+		    <div id="texts"> 
+		    	<h1>Title</h3>
+		    	<h2>Description</h2>
+		    	<h3>10.23$<h1>
+		    	<h3>Date<h1>
+		    </div>
+		  </div>
 
-		<footer>
-			<p>LicitiX.com, Copyright &copy; 2017</p>
-		</footer>
-	</body>
+		  <div class="row">
+		 	 <div id="image">
+		    	<img src="images/item3.jpg" />
+		    </div>
+		    <div id="texts"> 
+		    	
+		    	<h1>Title</h3>
+		    	<h2>Description</h2>
+		    	<h3>10.23$<h1>
+		    	<h3>Date<h1>
+		    </div>
+		  </div>
+		  <div class="row">
+		  	<div id="image">
+		    	<img src="images/item4.jpg" />
+		    </div>
+		    <div id="texts"> 
+		    	
+		    	<h1>Title</h3>
+		    	<h2>Description</h2>
+		    	<h3>10.23$<h1>
+		    	<h3>Date<h1>
+		    </div>
+		  </div>
+		  <div class="row">
+		  	<div id="image">
+		    	<img src="images/item5.jpg" />
+		    </div>
+		    <div id="texts"> 
+		    	
+		    	<h1>Title</h3>
+		    	<h2>Description</h2>
+		    	<h3>10.23$<h1>
+		    	<h3>Date<h1>
+		    </div>
+		  </div>
+
+		</div>
+    </body>
 </html>

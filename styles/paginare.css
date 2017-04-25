@@ -1,0 +1,56 @@
+#menubar {
+    margin-bottom: 19px;
+}
+
+.container_item {
+
+
+  
+  width: 1000px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.container_item .row {
+    background-color: #FFFFFF;
+  margin-bottom: 10px;
+    border-style: ridge;
+    border-width: 2px;
+
+}
+
+.container .row {
+  margin-left: 10px;
+
+}
+
+#image {
+    height: 200px;
+    width: 200px;
+    margin: 0;
+    float:left;
+}
+
+.container_item .row {
+    height: 220px;
+}
+
+.container_item .row img{
+    padding-top: 10px;
+    padding-left: 10px;
+    height: 200px;
+    width: 200px;
+    float: left;
+}
+
+
+#texts {
+    float: left;
+     width:200px;
+     height: 200px;
+     padding-top: 10px;
+     padding-right: 100px;
+     padding-left: 70px;
+}

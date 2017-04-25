@@ -5,14 +5,14 @@ body {
 	font: 14px/1.4 Arial, Helvetica, sans-serif;
 	padding: 0;
 	margin: 0;
-	background-color: #FFFFFF;
+	background-color: #F7F7F7;
     -webkit-font-smoothing: subpixel-antialiased;
 }
 
 /* Global */
 .container {
-	width: 80%;
-	max-width: 1350px;
+	width: 82%;
+	max-width: 1750px;
 	min-width: 500px;
 	margin: auto;
 	overflow: hidden;
@@ -23,9 +23,9 @@ ul{
 	padding:0;
 }
 
-.button_1{
+.search-button{
 	height: 37px;
-	background: #e8491d;
+	background: rgba(249,137,39,1);
 	border: 0;
 	padding: 0 20px 0 20px;
 	color: #FFFFFF;
