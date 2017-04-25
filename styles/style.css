@@ -21,6 +21,11 @@ body{
     background-color: #464646;
 }
 
+.container .btn:hover, .container .btn:focus, .container .btn:active, .container .btn.is-active {
+    cursor: pointer;
+    color: #000;
+}
+
 .body-container {
     width: 90%;
     max-width: 1350px;
@@ -28,6 +33,8 @@ body{
     margin: auto;
     overflow: hidden;
 }
+
+
 
 .container {
     width: 500px;
