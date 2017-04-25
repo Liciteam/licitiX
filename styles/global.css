@@ -23,10 +23,20 @@ ul{
 	padding:0;
 }
 
+
+
 .search-button{
-	height: 37px;
+	height: 40px;
 	background: rgba(249,137,39,1);
 	border: 0;
 	padding: 0 20px 0 20px;
 	color: #FFFFFF;
 }
+
+
+.search-button:hover, .search-button:focus, .search-button:active, .search-button.is-active {
+    cursor: pointer;
+    background: rgba(229,147,39,1);
+}
+
+
