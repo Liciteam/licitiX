@@ -9,8 +9,10 @@
 		<meta name="keywords" content="auction site, auction online, buy, sell, auction shop">
 		<meta name="authors" content="Alexandru Rusu, Claudia Lucasi, Cristian Iacob">
 
-		
-		<link rel="stylesheet" href="./styles/home_style.css" type="text/css"/>
+		<link rel="stylesheet" href="./styles/global.css" type="text/css"/>
+		<link rel="stylesheet" href="./styles/header.css" type="text/css"/>
+		<link rel="stylesheet" href="./styles/nav_bar.css" type="text/css"/>
+		<link rel="stylesheet" href="./styles/home.css" type="text/css"/>
 	</head>
 	<body>
 		<header>
@@ -20,22 +22,66 @@
 				</div>
 				<nav class="account-nav nav-height">
 					<ul>
-						<li class="activity"><a href="home.html">Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<li class="activity">
+							<a href="home.html" class="nav-link" title="Home">
+	                            <span class="nav-icon"></span>
+	                            <span class="text-link">
+	                            	Home
+	                            </span>
+                        	</a>
+                        </li>
+						<li class="favorites">
+							<a href="home.html" class="nav-link" title="Favorites">
+	                            <span class="nav-icon"></span>
+	                            <span class="text-link">
+	                            	Favorites
+	                            </span>
+                        	</a>
+                        </li>
+						<li class="user-nav">
+							<a href="add_item.html" class="nav-link" title="Account">
+	                            <span class="nav-icon"></span>
+	                            <span class="text-link">
+	                            	Account
+	                            </span>
+                        	</a>
+						</li>
+						<li class="cart">
+							<a href="home.html" class="nav-link" title="Cart">
+	                            <span class="nav-icon"></span>
+	                            <span class="text-link">
+	                            	Cart
+	                            </span>
+                        	</a>
+						</li>
 					</ul>
 				</nav>
 			</div>
 
 		</header>
 
-		<section id="showcase">
+		<nav id="menubar">
 			<div class="container">
-				<h1>Find whatever you disire and take it!</h1>
-				<div id ="searchbar">
-            		<form>
+	            <a href="paginare.html">Fashion</a>
+	            <a href="paginare.html">Electronics</a>
+	            <a href="paginare.html">Art</a>
+	            <a href="paginare.html">Sporting Goods</a>
+	            <a href="paginare.html">Motors</a>
+	            <a href="paginare.html">Estate</a>
+	            <a href="paginare.html">Luxurya</a>
+	            <a href="paginare.html">Antiques</a>
+	            <a href="paginare.html">Collectibles</a>
+        	</div>
+        </nav>
+
+		<section id="showcase">
+			<div class="container" >
+				<h1>Find whatever you <br/>desire and take it!</h1>
+				<div id ="searchbar" >
+
+            		<form method="get" action="paginare.html">
                 		<input type="search" id="search" placeholder="What are you searching for?" />
-                		<button type="submit" class="button_1">Search</button>
+                		<button type="submit" class="search-button" >Search</button>
             		</form>
         		</div>
 			</div>
@@ -44,22 +90,25 @@
 		<section id="boxes">
 			<div class="container">
 				<div class="box">
-					<img src="./images/logo_html.png">
-					<h3>Html5 Markup</h3>
+					<img src="./images/magnifier_step1.png">
+					<h3>Search for what you love</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 				</div>
 				<div class="box">
-					<img src="./images/logo_css.png">
-					<h3>CSS3 Styling</h3>
+					<img src="./images/auction_step2.png">
+					<h3>Get the best offer for it</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 				</div>
 				<div class="box">
-					<img src="./images/logo_brush.png">
-					<h3>Graphic Design</h3>
+					<img src="./images/shopping_step3.png">
+					<h3>Take it home with you</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 				</div>
 			</div>
 		</section>
+
+		<br /><br /><br /><br />
+		<br /><br /><br /><br />
 
 		<footer>
 			<p>LicitiX.com, Copyright &copy; 2017</p>

@@ -14,9 +14,7 @@ header {
 
 header a {
     /*color:rgb(234,158,0);*/
-    /*color: #666165;*/
-    color: #8A8A8A;
-    
+    color: #666165;
     text-decoration: none;
     font-size: 14px;
 
@@ -31,11 +29,7 @@ header li{
     float:left;
     display:inline;
     background: transparent;
-    padding: 0;
-}
-header li>.nav-link {
-    margin-left: 5px;
-    margin-right: 5px;
+    padding: 0 10px 0 10px;
 }
 
 header .nav-height, .nav-height>ul>li>.nav-link, .nav-height>ul>li>a  {
@@ -80,7 +74,7 @@ header .account-nav>ul>li:before {
     display: block;
     /*left: 0; */
     top: 23px;
-    bottom: 14px;
+    bottom: 19px;
     background-color: #eee;
     width: 1px;
     /*box-sizing: border-box;*/
@@ -116,11 +110,6 @@ header .nav-link{
 
 .nav-link:hover .nav-icon, .nav-link:focus .nav-icon {
     color: #000;
-    -webkit-filter: brightness(0%);
-    filter: brightness(0%);
-}
-.nav-link:hover .gnav-dropdown, .nav-link:focus .gnav-dropdown{
-    color: #000;
 }
 
 .nav-link .text-link {
@@ -128,30 +117,6 @@ header .nav-link{
     white-space: nowrap;
     margin-top: -2px;
 }
-
-.nav-link .gnav-dropdown {
-    cursor: pointer;
-    font-size: 20px;
-    line-height: 8px;
-    position: relative;
-    top: 50%;
-    margin: 0 -1px 0 0;
-    left: auto;
-    color: #bbb;
-}
-.text-link-copy {
-    margin-left: 5px;
-}
-
-.nav-link .gnav-dropdown:before {
-    content: '▾';
-    display: inline-block;
-    width: 10px; 
-    height: 5px;
-}
-
-
-
 
 
 
@@ -163,14 +128,29 @@ header .nav-link{
     background-size: 70%;
 }
 
+.activity .nav-link:hover .nav-icon, .activity .nav-link:focus .nav-icon {
+    background: url('../images/header/home1.png') transparent no-repeat center center;
+    background-size: 70%;
+}
+
 .favorites .nav-link .nav-icon {
     background: url('../images/header/heart.png') transparent no-repeat center center;
     background-size: 42%;
 }
 
+.favorites .nav-link:hover .nav-icon, .favorites .nav-link:focus .nav-icon {
+    background: url('../images/header/heart1.png') transparent no-repeat center center;
+    background-size: 42%;
+}
+
 .user-nav .nav-link .nav-icon {
     background: url('../images/header/profile.png') transparent no-repeat center center;
-    background-size: 57%;
+    background-size: 44%;
+}
+
+.user-nav .nav-link:hover .nav-icon, .user-nav .nav-link:focus .nav-icon {
+    background: url('../images/header/profile1.png') transparent no-repeat center center;
+    background-size: 44%;
 }
 
 .cart .nav-link .nav-icon {
@@ -178,6 +158,10 @@ header .nav-link{
     background-size: 95%;
 }
 
+.cart .nav-link:hover .nav-icon, .cart .nav-link:focus .nav-icon {
+    background: url('../images/header/cart1.png') transparent no-repeat center center;
+    background-size: 95%;
+}
 
 
 
@@ -203,7 +187,7 @@ header .nav-link{
     }
 
     header .nav-link{
-        padding: 0 5px;
+        padding: 0 0px;
     }
 
     .nav-link .text-link {
@@ -217,29 +201,43 @@ header .nav-link{
         margin: 18px auto 0;
     }
 
-    .nav-link .gnav-dropdown {
-        left: 40px;
-        line-height: 19px;
-        position: absolute;
-        margin: -8px 0 0 0;
-    }
-
-
     .activity .nav-link .nav-icon {
+        background: url('../images/header/home.png') transparent no-repeat center center;
         background-size: 70%;
     }
 
+    .activity .nav-link:hover .nav-icon, .activity .nav-link:focus .nav-icon {
+        background: url('../images/header/home1.png') transparent no-repeat center center;
+        background-size: 70%;
+    }
 
     .favorites .nav-link .nav-icon {
+        background: url('../images/header/heart.png') transparent no-repeat center center;
+        background-size: 67%;
+    }
+
+    .favorites .nav-link:hover .nav-icon, .favorites .nav-link:focus .nav-icon {
+        background: url('../images/header/heart1.png') transparent no-repeat center center;
         background-size: 67%;
     }
 
     .user-nav .nav-link .nav-icon {
+        background: url('../images/header/profile.png') transparent no-repeat center center;
         background-size: 65%;
     }
 
+    .user-nav .nav-link:hover .nav-icon, .user-nav .nav-link:focus .nav-icon {
+        background: url('../images/header/profile1.png') transparent no-repeat center center;
+        background-size: 65%;
+    }
 
     .cart .nav-link .nav-icon {
+        background: url('../images/header/cart.png') transparent no-repeat center center;
+        background-size: 75%;
+    }
+
+    .cart .nav-link:hover .nav-icon, .cart .nav-link:focus .nav-icon {
+        background: url('../images/header/cart1.png') transparent no-repeat center center;
         background-size: 75%;
     }
 
