@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" href="images/icon.png" />
+		<title>LicitiX.com | Auction is life</title>
+		<meta name="description" content="Buy or sell all types of items in our online auction">
+		<meta name="keywords" content="auction site, auction online, buy, sell, auction shop">
+		<meta name="authors" content="Alexandru Rusu, Claudia Lucasi, Cristian Iacob">
+
+		
+		<link rel="stylesheet" href="../styles/header.css" type="text/css"/>
+	</head>
+
+	<body>
+
+		<!-- HEADER  copy & paste into your page -->
+		<header>
+			<div class="container">
+				<div id="branding" class="nav-height">
+					<a href="home.html" aria-label="Licitix Logo">LicitiX</a>
+				</div>
+				<nav class="account-nav nav-height">
+					<ul>
+						<li class="activity">
+							<a href="home.html" class="nav-link" title="Home">
+	                            <span class="nav-icon"></span>
+	                            <span class="text-link">
+	                            	Home
+	                            </span>
+                        	</a>
+                        </li>
+						<li class="favorites">
+							<a href="home.html" class="nav-link" title="Favorites">
+	                            <span class="nav-icon"></span>
+	                            <span class="text-link">
+	                            	Favorites
+	                            </span>
+                        	</a>
+                        </li>
+						<li class="user-nav">
+							<a href="home.html" class="nav-link" title="Account">
+	                            <span class="nav-icon"></span>
+	                            <span class="text-link">
+	                            	Account
+	                            </span>
+                        	</a>
+						</li>
+						<li class="cart">
+							<a href="home.html" class="nav-link" title="Cart">
+	                            <span class="nav-icon"></span>
+	                            <span class="text-link">
+	                            	Cart
+	                            </span>
+                        	</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+		</header>
+		<!-- don't select more then this -->
+
+		<div class="container">hghghg</div>
+
+	</body>
+</html>

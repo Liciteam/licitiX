@@ -6,6 +6,7 @@ body {
 	padding: 0;
 	margin: 0;
 	background-color: #F7F7F7;
+	list-style-position: outside;
     -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -23,6 +24,9 @@ ul{
 	padding:0;
 }
 
+img {
+	border: 0;
+}
 
 
 .search-button{
