@@ -99,6 +99,8 @@ and open the template in the editor.
         <legend> Details </legend>
         Title :<br>
         <input type="text" name="title" value=""/><br><br>
+        Short-description :<br> <textarea name="short_description" rows="2" cols="100">Type your item short-description</textarea></br>
+        Key-words :<br> <textarea name="keywords" rows="2" cols="100">Type your item keywords</textarea></br><br>
          Category : <br>   <select name="Category">
     <option value="fashion">Fashion</option>
     <option value="Electronics">Electronics</option>
@@ -109,27 +111,17 @@ and open the template in the editor.
     <option value="Luxurya">Luxurya</option>
     <option value="Antiques">Antiques</option>
     <option value="Collectibles">Collectibles</option>
-  </select></br><br>
-  State : <br>   <select name="state">
-    <option value="not used">Not used</option>
-    <option value="used">Used</option>
-    <option value="very used">Very used</option></select><br><br>
-    Description :<br> <textarea name="message" rows="5" cols="100">Type your item description</textarea></br>
-     Quantity:
-  <input type="number" name="quantity"
-   min="0" max="50" step="1" value="1" />
+  </select></br>
+  <br>
+    Description :<br> <textarea name="description" rows="5" cols="100">Type your item description</textarea></br>
+    
     </fieldset><br><br>
 
     <fieldset>
-        <legend> Price & Shipping</legend>
+        <legend> Price & Date</legend>
         Price :<br><input type="text" name="price" value="0.00"/> €<br><br>
-        Available until :<br><input type="date" name="bday"/><br><br>
-        Shipping : <br>   <select name="Country">
-        <option value="den">Denmark</option>
-        <option value="de">Germany</option>
-        <option value="ro">Romania</option></select></br><br>
-        Shipping Fee :<br>
-        <input type="text" name="price1" value="0.00" /> €<br><br>
+        Start date: :<br><input type="date" name="startdate"/><br><br>
+        End date: :<br><input type="date" name="enddate"/><br><br>
     </fieldset><br><br>
 
 

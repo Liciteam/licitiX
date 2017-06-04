@@ -1,12 +1,13 @@
 CREATE TABLE `items` (
-  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `image` longblob NOT NULL,
-  `title` varchar(50) NOT NULL,
-  `category` varchar(50) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `title` text NOT NULL,
   `description` text NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `price` float NOT NULL,
-  `available_until` date NOT NULL,
-  `shipping` varchar(50) NOT NULL,
-  `shipping_fee` float NOT NULL
+  `Keywords` text NOT NULL,
+  `short_description` text NOT NULL,
+  `picture` longblob,
+  `seller_id` int(11) NOT NULL,
+  `category` text NOT NULL,
+  `auction_start_date` date NOT NULL,
+  `auction_end_date` date NOT NULL,
+  `price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
