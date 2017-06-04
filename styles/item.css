@@ -6,13 +6,15 @@ background-size : 100% auto;
 }
 .blended_grid{
 display : block;
-width : 1302px;
+width : 1402px;
+height: 1300px;
 overflow : auto;
 margin : 30px auto 0 auto;
 }
 .pageHeader{
 
 float : left;
+
 clear : none;
 height : 100px;
 width : 1298px;
@@ -38,22 +40,56 @@ width : 1298px;
 }
 
 .pageLeftMenu{
-background-color : green;
+    padding-left: 100px;
+
 float : left;
 clear : none;
 height : 600px;
-width : 600px;
+width : 500px;
 }
 
 .pageLeftMenu img{
-	width: 600px;
+	width: 500px;
 	height: 600px;
 }
 .pageContent{
-
+padding-left: 100px;
 float : left;
 clear : none;
 height : 600px;
 width : 700px;
 }
 
+
+.pageDescription{
+    height: 200px;
+    width: 1300px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.pageDescription p{
+    font-size: 24px;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 100px;
+
+}
+
+.pageDescription2{
+    margin-top: 100px;
+    padding-top: 100px;
+    height: 200px;
+    width: 1300px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-size: 24px;
+}
+
+.pageContent p{
+    font-size: 20px;
+}
+.pageContent span{
+    font-weight: bold;
+}
