@@ -84,22 +84,21 @@ and open the template in the editor.
         
         <br>
 
-        <form action = "" method="get">
-
+        <form action="add_item_into_db.php"" method="POST" enctype="multipart/form-data">
+        
         <strong><h1>Add your item</h1></strong><br>
 
         <fieldset>
         <legend> Images </legend>
-          <form action="upload.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
+        <input type="file" name="image" />
         </fieldset><br>
+        
+
 
         <fieldset>
         <legend> Details </legend>
         Title :<br>
-        <input type="text" name="title" value=""><br><br>
+        <input type="text" name="title" value=""/><br><br>
          Category : <br>   <select name="Category">
     <option value="fashion">Fashion</option>
     <option value="Electronics">Electronics</option>
@@ -111,40 +110,41 @@ and open the template in the editor.
     <option value="Antiques">Antiques</option>
     <option value="Collectibles">Collectibles</option>
   </select></br><br>
-  State : <br>   <select name="Category">
+  State : <br>   <select name="state">
     <option value="not used">Not used</option>
     <option value="used">Used</option>
     <option value="very used">Very used</option></select><br><br>
     Description :<br> <textarea name="message" rows="5" cols="100">Type your item description</textarea></br>
      Quantity:
   <input type="number" name="quantity"
-   min="0" max="50" step="1" value="1">
+   min="0" max="50" step="1" value="1" />
     </fieldset><br><br>
 
     <fieldset>
-    <legend> Price & Shipping</legend>
-    Price :<br><input type="text" name="price" value="0.00"> €<br><br>
-    Available until :<br><input type="date" name="bday"><br><br>
-    Shipping : <br>   <select name="Country">
-    <option value="den">Denmark</option>
-    <option value="de">Germany</option>
-    <option value="ro">Romania</option></select></br><br>
-    Shipping Fee :<br><input type="text" name="price" value="0.00"> €<br><br>
-  </fieldset><br><br>
+        <legend> Price & Shipping</legend>
+        Price :<br><input type="text" name="price" value="0.00"/> €<br><br>
+        Available until :<br><input type="date" name="bday"/><br><br>
+        Shipping : <br>   <select name="Country">
+        <option value="den">Denmark</option>
+        <option value="de">Germany</option>
+        <option value="ro">Romania</option></select></br><br>
+        Shipping Fee :<br>
+        <input type="text" name="price1" value="0.00" /> €<br><br>
+    </fieldset><br><br>
 
 
 
-   <input type="submit" value="Submit"><br><br><br><br>
+   <input type="submit" name="sumit" value="Upload" /><br><br><br><br>
 
-        </form>
+        
         </fieldset>
         </form>
         </body>
 
-            <footer id = "footer">
-  <P class="blocktext">© Copyright 2017, All Rights Reserved</p>
-</footer>
-
+    <footer id = "footer">
+    <P class="blocktext">© Copyright 2017, All Rights Reserved</p>
+    </footer>
+</html>
 
                 
         
