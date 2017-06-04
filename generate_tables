@@ -1,0 +1,32 @@
+
+CREATE TABLE `licitix`.`users` (
+    `user_id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+    `name` VARCHAR(255) NOT NULL ,
+    `email` VARCHAR(255) NOT NULL ,
+    `password` VARCHAR(255) NOT NULL ,
+    `adress` VARCHAR(255) NOT NULL
+) ENGINE = InnoDB;
+
+CREATE TABLE `licitix`.`items` (
+		 `item_id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+ 		 `title` TEXT NOT NULL ,
+ 		 `description` TEXT NOT NULL ,
+   		 `Keywords` TEXT NOT NULL ,
+  	     `short_description` TEXT NOT NULL ,
+   	     `picture` TEXT NOT NULL ,
+         `seller_id` INT(11) NOT NULL ,
+         `subcategory` TEXT NOT NULL ,
+         `auction_start_date` DATE NOT NULL ,
+    	 `auction_end_date` DATE NOT NULL ,
+         `price` INT(11) NOT NULL
+)
+ENGINE = InnoDB;
+
+INSERT INTO `items` (`item_id`, `title`, `description`, `Keywords`, `short_description`, `picture`, `seller_id`, `subcategory`, `auction_start_date`, `auction_end_date`, `price`) VALUES ('1', 'Telefon mobil Apple iPhone 6 Plus, 16GB, Space Gray', 'iPhone 6 nu este doar mai mare, ci si mai bun din toate punctele de vedere. Mai mare, dar mult mai subtire. Mai puternic, dar remarcabil de eficient energetic. Cu o suprafata neteda de metal care face lin trecerea catre noul ecran Retina HD. Un design uniform in care componentele hardware si software functioneaza in perfecta armonie, creand o noua generatie de iPhone, mai buna din toate punctele de vedere.', 'telefon iphone foarte scump', 'iPhone 6 este conceput pentru a fi incredibil de eficient. Asadar va puteti petrece ziua profitand de toate carateristicile si aplicatiile noi.', 'images/item4.jpg', '2', 'Telefon', '2017-06-01', '2017-06-30', '500');
+
+CREATE TABLE `bids` (
+  `user_id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `bid_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

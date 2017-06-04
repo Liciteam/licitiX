@@ -13,3 +13,5 @@
 	
 
 	$conn->query($sql);
+
+	include 'index.php';

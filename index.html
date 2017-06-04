@@ -4,8 +4,6 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-
-
 <html>
     <head>
         <link rel="icon" href="images/icon.png" />
@@ -39,6 +37,7 @@ and open the template in the editor.
                 <img src="images/logo_licitix2.png">
                 <h2 class="sopet"> Welcome to our comunity ! <br>
                     You come with a need, we give you the solution</h2>
+                
                     <button onclick="toggle_div_fun('form3');" class="btn" id="btn1">
                         Get Started
                     </button>
@@ -46,20 +45,20 @@ and open the template in the editor.
                         Log In
                     </button>
                 
-                <form id="form2" action="login.php" method="POST">
-                    <input type="text" name="email" id="ipt" placeholder="Email">
-                    <input type="password" name="password" id="ipt" placeholder="Password">
-                    <button type="submit" class="btn" id="btn1">
+                <form id="form2">
+                    <input type="text" id="ipt" placeholder="Username">
+                    <input type="password" id="ipt" placeholder="Password">
+                    <button type="button" class="btn" id="btn1" onclick="location.href='home.html'">
                         Log In
                     </button> 
                 </form>
                 
                 <form id="form3" action="register.php" method="POST">
                     <input type="text" name="name" id="ipt" placeholder="Iacob Cristian">
-                    <input type="text" name="email" id="ipt" placeholder="Email">
-                    <input type="password" name="password" id="ipt" placeholder="Password">
-                    <input type="text" name="adress" id="ipt" placeholder="Adress">
-                    <button type="submit" class="btn" id="btn1">
+                    <input type="text" id="ipt" placeholder="Email">
+                    <input type="password" id="ipt" placeholder="Password">
+                    <input type="text" id="ipt" placeholder="Adress">
+                    <button type="button" class="btn" id="btn1" onclick="location.href='home.html'">
                         Register
                     </button> 
                 </form>
