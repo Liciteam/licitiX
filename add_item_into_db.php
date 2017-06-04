@@ -4,11 +4,7 @@
 				$conn = new mysqli("localhost", "root", "", "licitix");
 				
 				
-					$image = addslashes($_FILES['image']['tmp_name']);
-					$image = file_get_contents($image);
-					$image = base64_encode($image);	
-
-				
+					
 					$title = $_POST['title'];
 					$category = $_POST['Category'];
 					$description = $_POST['description'];
@@ -22,6 +18,16 @@
 					$row = $result->fetch_array(MYSQLI_NUM);
 					$user_id=$row[0];
 					
+					$uploaddir = 'images/';
+					$uploadfile = $uploaddir . basename($_FILES['image']['name']);
+
+					$image =  $uploaddir . basename($_FILES['image']['name']);
+
+					if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
+					  echo "File is valid, and was successfully uploaded.\n";
+					} else {
+					   echo "Upload failed";
+					}
 
 
 					echo "$title <br> <br>";
@@ -39,9 +45,9 @@
 					echo "$user_id <br> <br>";
 
 
-					$query = "insert into items (item_id, title,description, keywords, short_description, picture,
+					$query = "insert into items ( title,description, keywords, short_description, picture,
 	                                              seller_id,  category, auction_start_date, auction_end_date,price)
-										values(-1, '$title','$description', '$keywords','$short_description', '$image',
+										values( '$title','$description', '$keywords','$short_description', '$image',
 										       $user_id,'$category', '$startdate', 
 											    '$enddate','$price')";
 
