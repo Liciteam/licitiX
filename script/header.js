@@ -36,17 +36,24 @@ function activate_register_form(class_id, activate, tab_id, second_tab_id) {
 		var str = "header .forms .";
 		str = str.concat(class_id)
 		var query = document.querySelectorAll(str);
-		if (activate) {
+		if (activate == true) {
+			document.getElementById("signin-button").setAttribute("value", "Register");
+			document.getElementById("register-login-form").setAttribute("action", "register.php");
+
+			for (i=0; i<query.length; i++)
+			{
+				//document.write("bla");
+				if (query[i].classList.contains("clear"))
+					query[i].classList.remove("clear");
+			}
+		} else {
+			document.getElementById("signin-button").setAttribute("value", "Sign in");
+			document.getElementById("register-login-form").setAttribute("action", "login.php");
+
 			for (i=0; i<query.length; i++)
 			{
 				if (!query[i].classList.contains("clear"))
-					query[i].classList.toggle("clear");
-			}
-		} else {
-			for (i=0; i<query.length; i++)
-			{
-				if (query[i].classList.contains("clear"))
-					query[i].classList.remove("clear");
+					query[i].classList.add("clear");
 			}
 		}
 		
@@ -60,9 +67,9 @@ function show_login_register_form(type) {
 	document.getElementById('inline-overlay').style.display = "block";
 	document.getElementById('exposeMask').style.display = "block";
 	if(type == "login") {
-		activate_register_form('register-inputs', true, 'sign-in-tab', 'register-tab');
+		activate_register_form('register-inputs', false, 'sign-in-tab', 'register-tab');
 	} else {
-		activate_register_form('register-inputs', false, 'register-tab', 'sign-in-tab');
+		activate_register_form('register-inputs', true, 'register-tab', 'sign-in-tab');
 	}
 	
 }

@@ -1,36 +1,24 @@
 <?php if (session_id() == '' || !isset($_SESSION)) session_start(); ?>
 
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-
 <html>
-    <head>
-    	<meta charset="UTF-8">
-    	<meta name="viewport" content="width=device-width">
-        <link rel="icon" href="images/icon.png" />
-        <title>Items - LicitiX</title>
-        
-        <meta name="viewport" content="width=device-width">
-        <meta name="description" content="Buy or sell all types of items in our online auction">
-        <meta name="keywords" content="auction site, auction online, buy, sell, auction shop">
-        <meta name="authors" content="Alexandru Rusu, Claudia Lucasi, Cristian Iacob">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" href="images/icon.png" />
+		<title>LicitiX.com | Auction is life</title>
+		<meta name="description" content="Buy or sell all types of items in our online auction">
+		<meta name="keywords" content="auction site, auction online, buy, sell, auction shop">
+		<meta name="authors" content="Alexandru Rusu, Claudia Lucasi, Cristian Iacob">
 
 		<link rel="stylesheet" href="./styles/global.css" type="text/css"/>
 		<link rel="stylesheet" href="./styles/header.css" type="text/css"/>
 		<link rel="stylesheet" href="./styles/nav_bar.css" type="text/css"/>
-        <link rel="stylesheet" href="./styles/paginare.css" type="text/css"/>
-        <link rel="stylesheet" href="./styles/footer.css" type="text/css"/>
-
+		<link rel="stylesheet" href="./styles/home.css" type="text/css"/>
+		
 		<script src="./script/header.js"></script>
-    </head>
-
-    <body>
-
-
+	</head>
+	<body>
 		<header>
 			<div class="container">
 				<div id="branding" class="nav-height">
@@ -39,7 +27,7 @@ and open the template in the editor.
 				<a class="search-nav nav-link nav-height" id="search-icon" href="#">
                     <span class="nav-icon gnav-ss-icon gnav-ss-search"></span>
                 </a>
-				<div class="search-wrapper">
+				<div class="search-wrapper" style="display:none">
                     <div class="search-inner with-pointer">
                         <form id="nav-search" class="search-nav expanded-search nav-height" method="GET" action="/search.php">
                             <div class="gnav-search-inner clearable">
@@ -250,13 +238,12 @@ and open the template in the editor.
 
 		</header>
 
-
-        <nav id="menubar">
+		<nav id="menubar">
 			<div class="container">
 	            <a href="paginare.php?filtru=Fashion">Fashion</a>
 	            <a href="paginare.php?filtru=Electronics">Electronics</a>
 	            <a href="paginare.php?filtru=Art">Art</a>
-	            <a href="paginare.php?filtru=Sporting_Goods">Sporting Goods</a>
+	            <a href="paginare.php?filtru=Sporting Goods">Sporting Goods</a>
 	            <a href="paginare.php?filtru=Motors">Motors</a>
 	            <a href="paginare.php?filtru=Estate">Estate</a>
 	            <a href="paginare.php?filtru=Luxurya">Luxurya</a>
@@ -264,14 +251,63 @@ and open the template in the editor.
 	            <a href="paginare.php?filtru=Collectibles">Collectibles</a>
         	</div>
         </nav>
-        <?php
-        $filtru = $_GET['filtru'];
-        include 'list.php';
-        ?>
 
-		<br><br><br><br>
-		    <footer id = "footer">
-  <P class="blocktext">© Copyright 2017, All Rights Reserved</p>
-</footer>
-    </body>
+		<section id="showcase">
+			<div class="container" >
+				<h1>Find whatever you <br/>desire and take it!</h1>
+				<div id ="searchbar" >
+
+            		<form method="get" action="paginare.html">
+                		<input type="search" id="search" placeholder="What are you searching for?" />
+                		<button type="submit" class="search-button" >Search</button>
+            		</form>
+        		</div>
+        		<div class="search-wrapper">
+                    <div class="search-inner with-pointer">
+                        <form id="section-search" class="search-nav expanded-search nav-height" method="GET" action="/search.php">
+                            <div class="gnav-search-inner clearable">
+                                <div class="search-input-wrapper text-field-wrapper">
+                                    <input id="section-search-query" class="search-input dropdown-relative-positioned rounded" type="text" placeholder="What are you searching for?" name="search_query" value="" autocomplete="off" autocorrect="off" autocapitalize="off">
+                                </div>
+                                <div class="search-button-wrapper hide">
+                                    <button class="btn btn-primary" type="submit" value="Search">
+                                            Search
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>                    
+                    </div>
+                </div>
+			</div>
+		</section>
+
+		<section id="boxes">
+			<div class="container">
+				<div class="box">
+					<img src="./images/magnifier_step1.png">
+					<h3>Search for what you love</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<div class="box">
+					<img src="./images/auction_step2.png">
+					<h3>Get the best offer for it</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<div class="box">
+					<img src="./images/shopping_step3.png">
+					<h3>Take it home with you</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+			</div>
+		</section>
+
+		<br /><br /><br /><br />
+		<br /><br /><br /><br />
+
+		<footer>
+			<p>LicitiX.com, Copyright &copy; 2017</p>
+		</footer>
+		
+	</body>
 </html>

@@ -1,3 +1,5 @@
+<?php if (session_id() == '' || !isset($_SESSION)) session_start(); ?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -26,7 +28,7 @@ and open the template in the editor.
 		<header>
 			<div class="container">
 				<div id="branding" class="nav-height">
-					<a href="home.html" aria-label="Licitix Logo">LicitiX</a>
+					<a href="home.php" aria-label="Licitix Logo">LicitiX</a>
 				</div>
 				<a class="search-nav nav-link nav-height" id="search-icon" href="#">
                     <span class="nav-icon gnav-ss-icon gnav-ss-search"></span>
@@ -54,23 +56,24 @@ and open the template in the editor.
                 </div>
 				<nav class="account-nav nav-height">
 					<ul>
-						<li class="activity" style="display:none">
-							<a href="home.html" class="nav-link" title="Home">
+<?php if(isset($_SESSION['email'])) { ?>
+						<li class="activity">
+							<a href="home.php" class="nav-link" title="Home">
 	                            <span class="nav-icon"></span>
 	                            <span class="text-link">
 	                            	Home
 	                            </span>
                         	</a>
                         </li>
-						<li class="favorites" style="display:none">
-							<a href="home.html" class="nav-link" title="Favorites">
+						<li class="favorites">
+							<a href="home.php" class="nav-link" title="Favorites">
 	                            <span class="nav-icon"></span>
 	                            <span class="text-link">
 	                            	Favorites
 	                            </span>
                         	</a>
                         </li>
-						<li class="user-nav"  style="display:none" >
+						<li class="user-nav">
 							<a href="javascript:void(0)" class="nav-link" title="Account" id="user-nav-id">
 	                            <span class="nav-icon"></span>
 	                            <span class="text-link">
@@ -82,7 +85,7 @@ and open the template in the editor.
                         	</a>
 						</li>
 
-
+<?php } else { ?>
 						<li class="sell-on-licitix-link no-separator">
 	                        <a id="sell-on-licitix" class="sell-on-licitix-trigger nav-link" href="#" title="Sell on LictiX">
 	                            <span class="sell-copy">
@@ -100,14 +103,16 @@ and open the template in the editor.
 	                            Sign in
 	                        </a>
 	                    </li>
+<?php }  ?>
 						<li class="cart" >
-							<a href="home.html" class="nav-link" title="Cart">
+							<a href="home.php" class="nav-link" title="Cart">
 	                            <span class="nav-icon"></span>
 	                            <span class="text-link">
 	                            	Cart
 	                            </span>
                         	</a>
 						</li>
+
 					</ul>
 				</nav>
 				<div class="sub-navs">
@@ -118,7 +123,7 @@ and open the template in the editor.
 		                        <a  href="viewprofile.php" id="sub-nav-user-menu-0">
 		                            <img class="avatar" src="https://img1.etsystatic.com/175/0/23958548/iusa_75x75.50054149_nnn8.jpg" alt="">
 		                            <div class="details">
-		                                <p class="name">Denisa Laura</p>
+		                                <p class="name"><?php if(isset($_SESSION['name'])) { echo $_SESSION['name']; }?></p>
 		                                <div class="profile-link">
 		                                	<span id="profile-link-label" >View profile</span>
 		                                	<span class="gnav-icon gnav-right"></span>
@@ -127,34 +132,34 @@ and open the template in the editor.
 		                        </a>
 		                    </li>
 		                    <li>
-		                        <a class="sub-nav-text-link" href="home.html" id="sub-nav-user-menu-1">
+		                        <a class="sub-nav-text-link" href="home.php" id="sub-nav-user-menu-1">
 		                            <span class="gnav-icon gnav-conversations"></span>
 		                            Conversations
 		                            <span id="convos-count" class="count hide" style="display: none;">0</span>
 		                        </a>
 		                    </li>
 		                    <li>
-		                        <a class="sub-nav-text-link" href="home.html" id="sub-nav-user-menu-2">
+		                        <a class="sub-nav-text-link" href="home.php" id="sub-nav-user-menu-2">
 		                            Your bids
 		                        </a>
 		                    </li>
 		                    <li>
-		                        <a class="sub-nav-text-link" href="home.html" id="sub-nav-user-menu-3">
+		                        <a class="sub-nav-text-link" href="home.php" id="sub-nav-user-menu-3">
 		                            Purchases and reviews
 		                        </a>
 		                    </li>
 		                    <li>
-		                        <a class="sub-nav-text-link" href="home.html" id="sub-nav-user-menu-4">
+		                        <a class="sub-nav-text-link" href="home.php" id="sub-nav-user-menu-4">
 		                            Your listings
 		                        </a>
 		                    </li>
 		                    <li>
-		                        <a class="sub-nav-text-link" href="home.html" id="sub-nav-user-menu-5">
+		                        <a class="sub-nav-text-link" href="home.php" id="sub-nav-user-menu-5">
 		                            Add an item
 		                        </a>
 		                    </li>
 		                    <li>
-		                        <a class="sub-nav-text-link" href="home.html" id="sub-nav-user-menu-6">
+		                        <a class="sub-nav-text-link" href="home.php" id="sub-nav-user-menu-6">
 		                            Account settings
 		                        </a>
 		                    </li>
@@ -184,7 +189,7 @@ and open the template in the editor.
 					            </li>
 					        </ul>
 					        <div class="forms">
-						    	<form id="register-login-form" action="register.php" method="GET">
+						    	<form id="register-login-form" action="register.php" method="POST">
 						    		<div class="register-inputs clear" id="for-testing">
 										<div>
 									        <label for="firstname-existing">First name</label>
@@ -214,7 +219,7 @@ and open the template in the editor.
 									<div class="register-inputs clear">
 										<label for="retype-password-existing">Confirm Password</label>
 									        <span class="input-error-message" id="retype-password-existing-error"></span>
-									        <input type="password" class="text" name="password" id="retype-password-existing">
+									        <input type="password" class="text" name="password2" id="retype-password-existing">
 									</div>
 									
 
@@ -222,7 +227,7 @@ and open the template in the editor.
 								        <input type="submit" class="btn-primary submit-button" id="signin-button" data-default-text="Sign in" value="Sign in">
 								    </p>
 								    <div class="register-inputs clear top-margin"></div>
-								    <p class="fineprint clear">By clicking Register, you agree to LicitiX's Terms of Use and Privacy Policy. </p>
+								    <p class="fineprint register-inputs clear">By clicking Register, you agree to LicitiX's Terms of Use and Privacy Policy. </p>
 								    <!--
 				                    <button type="button" class="btn" id="btn1" onclick="location.href='home.html'">
 						            	Register

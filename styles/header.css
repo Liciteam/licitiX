@@ -602,7 +602,8 @@ header #inline-overlay .overlay-content {
     }
 
     .favorites .nav-link .nav-icon {
-        background-size: 67%;
+        background: url('../images/header/heart.png') transparent no-repeat center center;
+        background-size: 43%;
     }
 
     .user-nav .nav-link .nav-icon {

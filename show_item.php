@@ -1,6 +1,6 @@
 <?php
 
-	session_start();
+	if (session_id() == '' || !isset($_SESSION)) session_start(); 
 
 	$conn = new mysqli("sql11.freemysqlhosting.net", "sql11178361","NIK1rC4p5q", "sql11178361");
 	$item_id = $_GET['item_id'];
