@@ -30,8 +30,9 @@ and open the template in the editor.
     <body>
         <div class = "body-container">
             <div class ="searchbar">
-                <form  method="get" action="paginare.html">
-                    <input type="search" id="search" placeholder="Search..." />
+                <form  method="get" action="search.php">
+                    <input type="search" name = "search_query" id="search" placeholder="Search..." />
+                    <input type="submit" style="position: absolute; left: -9999px"/>
                 </form>
             </div>
 
