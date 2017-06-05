@@ -19,7 +19,8 @@ and open the template in the editor.
         <link rel="stylesheet" href="./styles/nav_bar.css" type="text/css"/>
         <link rel="stylesheet" href="./styles/item.css" type="text/css"/>
         <link rel="stylesheet" href="./styles/footer.css" type="text/css"/>
-
+		
+		<script src="./script/header.js"></script>
     </head>
     <body>
 		<header>
@@ -53,7 +54,7 @@ and open the template in the editor.
                 </div>
 				<nav class="account-nav nav-height">
 					<ul>
-						<li class="activity " >
+						<li class="activity" style="display:none">
 							<a href="home.html" class="nav-link" title="Home">
 	                            <span class="nav-icon"></span>
 	                            <span class="text-link">
@@ -61,7 +62,7 @@ and open the template in the editor.
 	                            </span>
                         	</a>
                         </li>
-						<li class="favorites">
+						<li class="favorites" style="display:none">
 							<a href="home.html" class="nav-link" title="Favorites">
 	                            <span class="nav-icon"></span>
 	                            <span class="text-link">
@@ -69,7 +70,7 @@ and open the template in the editor.
 	                            </span>
                         	</a>
                         </li>
-						<li class="user-nav"  >
+						<li class="user-nav"  style="display:none" >
 							<a href="javascript:void(0)" class="nav-link" title="Account" id="user-nav-id">
 	                            <span class="nav-icon"></span>
 	                            <span class="text-link">
@@ -82,20 +83,20 @@ and open the template in the editor.
 						</li>
 
 
-						<li class="sell-on-licitix-link no-separator" style="display:none">
+						<li class="sell-on-licitix-link no-separator">
 	                        <a id="sell-on-licitix" class="sell-on-licitix-trigger nav-link" href="#" title="Sell on LictiX">
 	                            <span class="sell-copy">
 									Sell on LicitiX
 	                            </span>
 	                        </a>
                     	</li>
-                    	<li class="register-link no-separator" style="display:none">
-	                        <a id="register" class="inline-overlay-trigger register-header-action select-register nav-link" rel="nofollow" href="#" title="Register" role="button">
+                    	<li class="register-link no-separator">
+	                        <a id="register" class="inline-overlay-trigger register-header-action select-register nav-link" rel="nofollow" href="#" title="Register" role="button" onclick="show_login_register_form('register')">
 	                            Register
 	                        </a>
 	                    </li>
-	                    <li class="sign-in-link no-separator" style="display:none">
-	                        <a id="sign-in" class="inline-overlay-trigger signin-header-action select-signin nav-link" rel="nofollow" href="#" title="Sign in" role="button">
+	                    <li class="sign-in-link no-separator">
+	                        <a id="sign-in" class="inline-overlay-trigger signin-header-action select-signin nav-link" rel="nofollow" href="#" title="Sign in" role="button" onclick="show_login_register_form('login')">
 	                            Sign in
 	                        </a>
 	                    </li>
@@ -114,7 +115,7 @@ and open the template in the editor.
 		            <div class="sub-nav user" id="sub-nav-user-navigation" >
 		                <ul>
 		                    <li class="bottom-divider no-extra-space gnav-user with-pointer">
-		                        <a  href="home.html" id="sub-nav-user-menu-0">
+		                        <a  href="viewprofile.php" id="sub-nav-user-menu-0">
 		                            <img class="avatar" src="https://img1.etsystatic.com/175/0/23958548/iusa_75x75.50054149_nnn8.jpg" alt="">
 		                            <div class="details">
 		                                <p class="name">Denisa Laura</p>
@@ -159,7 +160,7 @@ and open the template in the editor.
 		                    </li>
 		                            
 		                    <li class="top-divider" >
-		                        <a class="sub-nav-text-link sign-out" href="home.html" id="sub-nav-user-menu-7">
+		                        <a class="sub-nav-text-link sign-out" href="signout.php" id="sub-nav-user-menu-7">
 		                            Sign out
 		                        </a>
 		                    </li>
@@ -167,6 +168,73 @@ and open the template in the editor.
 		            </div>
 	                
 			    </div>
+			    <div class="overlay">
+				    <div id="inline-overlay" class="overlay-dialog" style="display:none">
+				    	<div class="overlay-content">
+				    		<ul class="tabs clear">
+					            <li class="first active">
+					                <a id="register-tab" href="#" onclick="activate_register_form('register-inputs', true, 'register-tab', 'sign-in-tab');">
+					                    Register
+					                </a>
+					            </li>
+					            <li class="" >
+					                <a id="sign-in-tab" href="#" onclick="activate_register_form('register-inputs', false, 'sign-in-tab', 'register-tab');">
+					                    Sign in
+					                </a>
+					            </li>
+					        </ul>
+					        <div class="forms">
+						    	<form id="register-login-form" action="register.php" method="GET">
+						    		<div class="register-inputs clear" id="for-testing">
+										<div>
+									        <label for="firstname-existing">First name</label>
+									        <span class="input-error-message" id="firstname-existing-error" style="display: none;"></span>
+									        <input type="text" autocorrect="off" autocapitalize="off" class="text" name="firstname" id="firstname-existing">
+									    </div>
+									    <div>
+									        <label for="lastname-existing">Last name</label>
+									        <span class="input-error-message" id="lastname-existing-error" style="display: none;"></span>
+									        <input type="text" autocorrect="off" autocapitalize="off" class="text" name="lastname" id="lastname-existing">
+									    </div>
+									</div>
+									<div class="register-inputs clear top-margin"></div>
+						    		<div class="login-inputs">
+							    		<div>
+									        <label for="username-existing">Email or Username</label>
+									        <span class="input-error-message" id="username-existing-error" style="display: none;"></span>
+									        <input type="text" autocorrect="off" autocapitalize="off" class="text" name="username" id="username-existing">
+									    </div>
+									    <div>
+
+									        <label for="password-existing">Password</label>
+									        <span class="input-error-message" id="password-existing-error"></span>
+									        <input type="password" class="text" name="password" id="password-existing">
+									    </div>
+									</div>
+									<div class="register-inputs clear">
+										<label for="retype-password-existing">Confirm Password</label>
+									        <span class="input-error-message" id="retype-password-existing-error"></span>
+									        <input type="password" class="text" name="password" id="retype-password-existing">
+									</div>
+									
+
+									<p class="submit">
+								        <input type="submit" class="btn-primary submit-button" id="signin-button" data-default-text="Sign in" value="Sign in">
+								    </p>
+								    <div class="register-inputs clear top-margin"></div>
+								    <p class="fineprint clear">By clicking Register, you agree to LicitiX's Terms of Use and Privacy Policy. </p>
+								    <!--
+				                    <button type="button" class="btn" id="btn1" onclick="location.href='home.html'">
+						            	Register
+						            </button> 
+						        -->
+				                </form>
+				                
+				            </div>
+			            </div>
+				    </div>
+				    <div id="exposeMask" onclick="hide_login_register_form()" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 9998; display: none; opacity: 0.6; background-color: rgb(221, 221, 221);"></div>
+				</div>
 			</div>
 
 		</header>

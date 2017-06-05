@@ -41,6 +41,10 @@ input, textarea, select, button {
     font: 13.3333px Arial;
 }
 
+hr {
+	width: 100%;
+}
+
 .rounded {
 	border-radius: 3px;
     overflow: hidden;

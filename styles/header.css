@@ -449,46 +449,168 @@ header .subnav-text-link .gnav-icon {
     display: none;
 }
 
+header .overlay {
+    background: transparent;
+}
 
 header #inline-overlay {   /* defineste si pozitioneaza meniurile dropdown cat mai in fata */
     position: absolute; 
     z-index: 9999;
-    width: 255px;
-    top: 81px;
-    left: 45%;
+    width: 500px;
+    top: 85px;
+    left: 35%;
+    text-align: left;
     font-size: 12px;
     line-height: 16px;
     padding: 0;
-    background: #fff;
-    border: 0 solid rgba(0, 0, 0, 0);
-    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1),0 0 0 1px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.1);
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    -moz-border-radius: 5;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+header #inline-overlay .overlay-content {
+    overflow: hidden;
+}
+#inline-overlay .tabs, #conversation-overlay .tabs {
+    list-style: none;
+    padding: 20px 10px 0 40px;
+    margin: 0px;
+    margin-bottom: 0px;
+    background: #FAF9F5;
+    border-bottom: 1px solid #E1E3DF;
+    border-top: 1px solid #FFF;
+    border-radius: 5px 5px 0 0;
+}
+
+#inline-overlay .tabs li, #conversation-overlay .tabs li {
+    margin-right: -4px;
+    float: none;
     
+}
+#inline-overlay .tabs li>a, #conversation-overlay .tabs li>a {
+    display: inline-block;
+    border: 1px solid #E1E3DF;
+    font-size: 13px;
+    padding: 8px 12px;
+    margin: 0 0 -1px;
+    text-align: center;
+    color: #444;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    background-color: #FAF9F5;
+    color: #444;
+}
+
+        
+
+#inline-overlay .forms {
+    padding: 0;
+    background: #fff;
+    float: none;
+    }
+
+#inline-overlay .forms #register-login-form  {
+    padding: 20px 53px;
+    overflow: hidden;
+}
+#inline-overlay .input-error-message {
+    border: 1px solid #ffc0cb;
+    background: #ffeeee;
+    color: #a80308;
+    display: none;
+    padding: 6px 8px 5px 8px;
+        clear: none;
+    float: right;
+    width: 215px;
+    line-height: 16px;
+}
+#inline-overlay input.text {
+    line-height: 16px;
+    color: #333;
+    font-size: 12px;
+    margin: 0 0 0.2em 0;
+    padding: 6px;
+    width: 228px;
+    border: 1px solid #c2c2c2;
+    border-right: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    display: block;
+}
+#inline-overlay .forms label {
+    color: #444;
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    clear: left;
+    }
+#inline-overlay .register-login-form .submit {
+    margin: 0 0 14px 0;
+    padding: 10px 0 0;
+}
+#inline-overlay .btn-primary {
+    display: inline-block;
+    min-width: 242px;
+    padding: 7px 15px 8px;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #FFF;
+    text-decoration: none;
+    font-family: Arial,sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0;
+    text-align: center;
+}
+#inline-overlay #register-login-form .top-margin {
+    color: #e1e1df;
+    height: 1px;
+    margin: 14px 0;
+    clear: both;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);  
+}
+#inline-overlay #register-login-form .fineprint {
+    color: #999;
+    font-size: 11px;
+    margin: 12px 0 5px;
+}
+
+#inline-overlay .tabs #sign-in-tab {
+    border-bottom-color: #FFF;
+    background-color: #FFF;
+}
+#inline-overlay #register-login-form .clear {
+    display: none;
 }
 
 /* TO DO - to implement a java script function that changes only the color of the png icons applying a mask over it */
 /* TO DO - to edit the sizes of the icons so it will be the same scale */
 
-.activity .nav-link .nav-icon {
+    .activity .nav-link .nav-icon {
     background: url('../images/header/home.png') transparent no-repeat center center;
-    background-size: 70%;
-}
+        background-size: 70%;
+    }
 
-.favorites .nav-link .nav-icon {
-    background: url('../images/header/heart.png') transparent no-repeat center center;
-    background-size: 42%;
-}
+    .favorites .nav-link .nav-icon {
+        background-size: 67%;
+    }
 
-.user-nav .nav-link .nav-icon {
+    .user-nav .nav-link .nav-icon {
     background: url('../images/header/profile.png') transparent no-repeat center center;
     background-size: 57%;
 }
 
-.cart .nav-link .nav-icon {
+    .cart .nav-link .nav-icon {
     background: url('../images/header/cart.png') transparent no-repeat center center;
     background-size: 95%;
 }
@@ -502,10 +624,12 @@ header #inline-overlay {   /* defineste si pozitioneaza meniurile dropdown cat m
     header .nav-height, .nav-height>ul>li>.nav-link, .nav-height>ul>li>a  {
         height: 70px;
     }
+    .nav-height .no-separator {
+        height: auto;
+    }
 
     header #branding {
         width: 85px;
-        
         margin-right: 5px;
     }
     header #branding a{
@@ -540,6 +664,10 @@ header #inline-overlay {   /* defineste si pozitioneaza meniurile dropdown cat m
         width: auto;
         min-width: 40px;
         margin: 18px auto 0;
+    }
+    header .account-nav .no-separator a {
+        margin-top: 19px;
+        height: 35px;
     }
 
     .nav-link .gnav-dropdown {

@@ -28,6 +28,57 @@ img {
 	border: 0;
 }
 
+input, textarea, select, button {
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em 0em 0em 0em;
+    font: 13.3333px Arial;
+}
+
+.rounded {
+	border-radius: 3px;
+    overflow: hidden;
+}
+.btn {
+    cursor: pointer;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    height: 38px;
+    line-height: 1.4;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    white-space: nowrap;
+}
+.btn-primary {
+    background-color: rgb(229,147,39);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #FFF;
+}
+.btn-primary:hover, .btn-primary.is-hovering {
+	background-color: rgb(229,147,39);
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-primary:active, .btn-primary.is-active, .btn-primary.is-selected {
+    background-color: #e65c00;
+    border-color: rgba(0, 0, 0, 0.5);
+}
+.btn-primary:focus {
+	outline: none;
+    border-color: rgba(0, 0, 0, 0.8);
+}
 
 .search-button{
 	height: 40px;
