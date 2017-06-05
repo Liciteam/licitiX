@@ -19,6 +19,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="./styles/nav_bar.css" type="text/css"/>
         <link rel="stylesheet" href="./styles/item.css" type="text/css"/>
         <link rel="stylesheet" href="./styles/footer.css" type="text/css"/>
+		<script src="./script/header.js"></script>
 
     </head>
     <body>

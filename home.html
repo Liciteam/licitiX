@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="./styles/header.css" type="text/css"/>
 		<link rel="stylesheet" href="./styles/nav_bar.css" type="text/css"/>
 		<link rel="stylesheet" href="./styles/home.css" type="text/css"/>
+		<script src="./script/header.js"></script>
 	</head>
 	<body>
 		<header>
@@ -234,28 +235,8 @@
 		<footer>
 			<p>LicitiX.com, Copyright &copy; 2017</p>
 		</footer>
+		
 		<script type="text/javascript">
-			document.onclick = function(e){
-				var settings = document.getElementById('user-nav-id');
-			    var target = (e && e.target) || (event && event.srcElement);
-			    var display = 'none';
-
-			    while (target.parentNode) {
-
-			        if (target == settings) {
-			        	if (document.getElementById('sub-nav-user-navigation').style.display == 'block')
-			            	display ='none';
-			            else 
-			            	display = 'block'
-			            break;
-			        }
-			        target = target.parentNode;
-			    }
-
-				document.getElementById('sub-nav-user-navigation').style.display = display;
-
-			}
-
 			function sub_nav_toggle(id) {
 			    //document.getElementById(id).classList.toggle("show");
 			    //return false;
