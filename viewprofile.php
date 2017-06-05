@@ -1,28 +1,22 @@
+<?php
+		session_start();
+?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-
 <html>
-    <head>
-    	<meta charset="UTF-8">
-    	<meta name="viewport" content="width=device-width">
-        <link rel="icon" href="images/icon.png" />
-        <title>Items - LicitiX</title>
-        
-        <meta name="viewport" content="width=device-width">
-        <meta name="description" content="Buy or sell all types of items in our online auction">
-        <meta name="keywords" content="auction site, auction online, buy, sell, auction shop">
-        <meta name="authors" content="Alexandru Rusu, Claudia Lucasi, Cristian Iacob">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" href="images/icon.png" />
+		<title>LicitiX.com | Auction is life</title>
+		<meta name="description" content="Buy or sell all types of items in our online auction">
+		<meta name="keywords" content="auction site, auction online, buy, sell, auction shop">
+		<meta name="authors" content="Alexandru Rusu, Claudia Lucasi, Cristian Iacob">
 
 		<link rel="stylesheet" href="./styles/global.css" type="text/css"/>
 		<link rel="stylesheet" href="./styles/header.css" type="text/css"/>
 		<link rel="stylesheet" href="./styles/nav_bar.css" type="text/css"/>
-        <link rel="stylesheet" href="./styles/paginare.css" type="text/css"/>
-        <link rel="stylesheet" href="./styles/footer.css" type="text/css"/>
-        <script type="text/javascript">
+		<link rel="stylesheet" href="./styles/home.css" type="text/css"/>
+		<script type="text/javascript">
 			document.onclick = function(e){
 				var settings = document.getElementById('user-nav-id');
 			    var target = (e && e.target) || (event && event.srcElement);
@@ -44,44 +38,16 @@ and open the template in the editor.
 
 			}
 		</script>
-
-    </head>
-
-    <body>
-
-
+	</head>
+	<body>
 		<header>
 			<div class="container">
 				<div id="branding" class="nav-height">
 					<a href="home.html" aria-label="Licitix Logo">LicitiX</a>
 				</div>
-				<a class="search-nav nav-link nav-height" id="search-icon" href="#">
-                    <span class="nav-icon gnav-ss-icon gnav-ss-search"></span>
-                </a>
-				<div class="search-wrapper">
-                    <div class="search-inner with-pointer">
-                        <form id="nav-search" class="search-nav expanded-search nav-height" method="GET" action="search.php">
-                            <div class="gnav-search-inner clearable">
-                                <div class="search-input-wrapper text-field-wrapper">
-                                    <input id="search-query" class="search-input dropdown-relative-positioned rounded" type="text" placeholder="Search for items" name="search_query" value="" autocomplete="off" autocorrect="off" autocapitalize="off">
-                                    <div id="search-suggestions" style="display: none;"></div>
-                                </div>
-                                <div class="search-button-wrapper hide">
-                                    <button class="btn btn-primary" type="submit" value="Search">
-                                            Search
-                                    </button>
-                                </div>
-                            </div>
-                        
-                        
-                            <input id="search-js-router-enabled" type="hidden" value="true">
-                        	<input type="hidden" value="all" name="search_type" id="search-type">
-                        </form>                    
-                    </div>
-                </div>
 				<nav class="account-nav nav-height">
 					<ul>
-						<li class="activity " >
+						<li class="activity">
 							<a href="home.html" class="nav-link" title="Home">
 	                            <span class="nav-icon"></span>
 	                            <span class="text-link">
@@ -97,7 +63,7 @@ and open the template in the editor.
 	                            </span>
                         	</a>
                         </li>
-						<li class="user-nav"  >
+						<li class="user-nav" >
 							<a href="javascript:void(0)" class="nav-link" title="Account" id="user-nav-id">
 	                            <span class="nav-icon"></span>
 	                            <span class="text-link">
@@ -108,26 +74,7 @@ and open the template in the editor.
 	                            </span>
                         	</a>
 						</li>
-
-
-						<li class="sell-on-licitix-link no-separator" style="display:none">
-	                        <a id="sell-on-licitix" class="sell-on-licitix-trigger nav-link" href="#" title="Sell on LictiX">
-	                            <span class="sell-copy">
-									Sell on LicitiX
-	                            </span>
-	                        </a>
-                    	</li>
-                    	<li class="register-link no-separator" style="display:none">
-	                        <a id="register" class="inline-overlay-trigger register-header-action select-register nav-link" rel="nofollow" href="#" title="Register" role="button">
-	                            Register
-	                        </a>
-	                    </li>
-	                    <li class="sign-in-link no-separator" style="display:none">
-	                        <a id="sign-in" class="inline-overlay-trigger signin-header-action select-signin nav-link" rel="nofollow" href="#" title="Sign in" role="button">
-	                            Sign in
-	                        </a>
-	                    </li>
-						<li class="cart" >
+						<li class="cart">
 							<a href="home.html" class="nav-link" title="Cart">
 	                            <span class="nav-icon"></span>
 	                            <span class="text-link">
@@ -142,7 +89,7 @@ and open the template in the editor.
 		            <div class="sub-nav user" id="sub-nav-user-navigation" >
 		                <ul>
 		                    <li class="bottom-divider no-extra-space gnav-user with-pointer">
-		                        <a  href="home.html" id="sub-nav-user-menu-0">
+		                        <a  href="viewprofile.php" id="sub-nav-user-menu-0">
 		                            <img class="avatar" src="https://img1.etsystatic.com/175/0/23958548/iusa_75x75.50054149_nnn8.jpg" alt="">
 		                            <div class="details">
 		                                <p class="name">Denisa Laura</p>
@@ -176,7 +123,7 @@ and open the template in the editor.
 		                        </a>
 		                    </li>
 		                    <li>
-		                        <a class="sub-nav-text-link" href="home.html" id="sub-nav-user-menu-5">
+		                        <a class="sub-nav-text-link" href="add_item.html" id="sub-nav-user-menu-5">
 		                            Add an item
 		                        </a>
 		                    </li>
@@ -187,7 +134,7 @@ and open the template in the editor.
 		                    </li>
 		                            
 		                    <li class="top-divider" >
-		                        <a class="sub-nav-text-link sign-out" href="home.html" id="sub-nav-user-menu-7">
+		                        <a class="sub-nav-text-link sign-out" href="signout.php" id="sub-nav-user-menu-7">
 		                            Sign out
 		                        </a>
 		                    </li>
@@ -199,8 +146,7 @@ and open the template in the editor.
 
 		</header>
 
-
-        <nav id="menubar">
+		<nav id="menubar">
 			<div class="container">
 	            <a href="paginare.php?filtru=Fashion">Fashion</a>
 	            <a href="paginare.php?filtru=Electronics">Electronics</a>
@@ -213,14 +159,48 @@ and open the template in the editor.
 	            <a href="paginare.php?filtru=Collectibles">Collectibles</a>
         	</div>
         </nav>
-        <?php
-        $filtru = $_GET['filtru'];
-        include 'list.php';
-        ?>
 
-		<br><br><br><br>
-		    <footer id = "footer">
-  <P class="blocktext">© Copyright 2017, All Rights Reserved</p>
-</footer>
-    </body>
-</html>
+<?php
+		$conn = mysql_connect("sql11.freemysqlhosting.net", "sql11178361","NIK1rC4p5q" ) OR DIE('Unable to connect, fuck my life! ');
+		mysql_select_db("sql11178361", $conn);
+
+		if (!$conn) {
+	    	die('Eșec la conectare: ' . mysql_error());
+		}
+		else
+		{
+			
+					$email = $_SESSION['email'];
+
+			$result = mysql_query("SELECT * FROM sql11178361.users where email = '$email'",$conn);
+
+
+				while($row3 = mysql_fetch_array($result))
+				{ 
+				$name=$row3['name'];
+				$email=$row3['email'];
+				$address=$row3['adress'];
+				}
+		}
+?>
+
+ <form action="add_item_into_db.php"" method="POST" enctype="multipart/form-data">
+ <strong><h1>Edit your profile</h1></strong><br>
+     <fieldset>
+        <legend> Your personal details</legend>
+        Name :<br><textarea name="name" rows="2" cols="50"><?php echo $name ?></textarea><br><br>
+        Email :<br><textarea name="email" rows="2" cols="50"><?php echo $email ?></textarea><br><br>
+        Change password :<br><input type="password" name="psw"><br><br>
+        Address :<br><textarea name="address" rows="2" cols="50"><?php echo $address ?></textarea><br><br>
+    </fieldset><br><br>
+   <input type="submit" name="sumit" value="Update" /><br><br><br><br>
+   </form>
+
+   <style type="text/css">
+   	form {
+  width: 1000px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+   </style>
