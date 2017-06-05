@@ -18,12 +18,14 @@
 					$name = $_POST['name'];
 					$email = $_POST['email'];
 					$password = $_POST['psw'];
+					$old_password = $_POST['psw_old'];
 					$adress = $_POST['address'];
 
 					$password=md5($password);
+					$old_password=md5($old_password);
 					$semail = $_SESSION['email'];
 				
-					$result = mysql_query("UPDATE sql11178361.users SET name = '$name', email ='$email',password= '$password', adress = '$adress' where email = '$semail'",$conn);
+				$result = mysql_query("UPDATE sql11178361.users SET name = '$name', email ='$email',password= '$password', adress = '$adress' where email = '$semail' and password= '$old_password'",$conn);
 				
 					//echo "$title <br> <br>";
 					//echo "$category <br> <br>";

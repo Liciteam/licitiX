@@ -26,6 +26,7 @@
 
 	$email = $_POST['email'];
 	$password = $_POST['password'];
+	$password = md5($password);
 	
 	$sql = "SELECT * FROM sql11178361.users WHERE EMAIl = '$email' AND PASSWORD = '$password'";
 

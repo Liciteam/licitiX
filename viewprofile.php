@@ -184,12 +184,13 @@
 		}
 ?>
 
- <form action="add_item_into_db.php"" method="POST" enctype="multipart/form-data">
+ <form action="update_user_information.php"" method="POST" enctype="multipart/form-data">
  <strong><h1>Edit your profile</h1></strong><br>
      <fieldset>
         <legend> Your personal details</legend>
         Name :<br><textarea name="name" rows="2" cols="50"><?php echo $name ?></textarea><br><br>
         Email :<br><textarea name="email" rows="2" cols="50"><?php echo $email ?></textarea><br><br>
+        Old password :<br><input type="password" name="psw_old"><br><br>
         Change password :<br><input type="password" name="psw"><br><br>
         Address :<br><textarea name="address" rows="2" cols="50"><?php echo $address ?></textarea><br><br>
     </fieldset><br><br>

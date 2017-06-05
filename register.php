@@ -17,7 +17,7 @@
 	$password = $_POST['password'];
 	$adress = $_POST['adress'];
 
-	//$password = md5($password);
+	$password = md5($password);
 	$sql = "INSERT INTO sql11178361.users(name, email, password, adress) VALUES ('$name', '$email', '$password', '$adress')";
 	
 
