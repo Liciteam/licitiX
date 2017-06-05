@@ -39,10 +39,11 @@ header li>.nav-link {
     margin-right: 5px;
 }
 
-header .nav-height, .nav-height>ul>li>.nav-link, .nav-height>ul>li>a  {
+header .nav-height, .nav-height>ul>li>.nav-link, .nav-height>ul>li>a, .nav-height .no-separator {
     height: 85px;
 }
 
+/* Style Logo */
 header #branding {
     float: left;
     width: 115px;
@@ -62,7 +63,73 @@ header #branding a{
     overflow: hidden;
 }
 
+/* Style Searchbar */
+header .search-nav {
+    position: relative;
+    float: left;
+    width: 35%;
+}
+header .gnav-search-inner {
+    position: absolute;
+    display: table;
+    width: 100%;
+    top: 50%;
+    margin-top: -15px;
+    height: 34px;
+}
+header .search-input-wrapper, header .search-button-wrapper {
+    white-space: nowrap;
+    display: table-cell;
+    vertical-align: top;
+    width: 100%;
+}
+header .search-input-wrapper #search-query {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+header #search-query {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    border: 1px solid #CFCBC8;
+    background: #f9f9f8;
+    margin-top: -17px;
+    padding: 6px 10px;
+    margin-left: 0;
+    height: 34px;
+    font-size: 14px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: inset 0 1px 2px #E9E9E8;
+    -moz-box-shadow: inset 0 1px 2px #E9E9E8,0 0 0 1000px #fbfbfa inset;
+    box-shadow: inset 0 1px 2px #E9E9E8, 0 0 0 1000px #fbfbfa inset;
+}
+header #search-query:focus, header #search-query:active {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    background: #FFF;
+    -moz-box-shadow: 0 0 0 1000px #fff inset;
+    box-shadow: 0 0 0 1000px #fff inset;
+}
+header .search-button-wrapper .btn-primary {
+    background: rgba(229,147,39,1);
+}
+header .search-button-wrapper .btn-primary {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    line-height: 17px;
+    height: 34px;
+    padding: 7px 15px 8px;
+}
 
+
+
+/* Style Navbar */
 header .account-nav{
     float:right;
     /*margin-top: 10px;*/
@@ -89,6 +156,43 @@ header .account-nav>ul>li:before {
 
 header .account-nav>ul>li:first-child:before {
     content: none;
+}
+header .account-nav .no-separator:before {
+    content: none;
+}
+
+header .account-nav .no-separator a {
+    color: rgba(229,157,39,1);
+    height: auto;
+    margin-top: 29px;
+    display: block;
+    float: left;
+    padding: 8px;
+    line-height: 16px;
+    font-size: 14px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+header .account-nav .no-separator a:hover, header .account-nav .no-separator a:focus {
+    text-decoration: underline;
+}
+header .sign-in-link a {
+
+    margin-right: 18px;
+    border: 1px solid;
+    border-color: rgba(229,157,39,1);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #0192B5;
+}
+header .sign-in-link a:hover, header .sign-in-link a:focus, header .sign-in-link a:active {
+    outline: none;
+    text-decoration: none !important;
+    background: #F2F2F2;
 }
 
 header .nav-link{
@@ -341,10 +445,30 @@ header .subnav-text-link .gnav-icon {
 
 
 
+#search-icon {
+    display: none;
+}
 
 
-
-
+header #inline-overlay {   /* defineste si pozitioneaza meniurile dropdown cat mai in fata */
+    position: absolute; 
+    z-index: 9999;
+    width: 255px;
+    top: 81px;
+    left: 45%;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 0;
+    background: #fff;
+    border: 0 solid rgba(0, 0, 0, 0);
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1),0 0 0 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.1);
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    
+}
 
 /* TO DO - to implement a java script function that changes only the color of the png icons applying a mask over it */
 /* TO DO - to edit the sizes of the icons so it will be the same scale */
@@ -460,6 +584,29 @@ header .subnav-text-link .gnav-icon {
         right: 10%;
     
     }
+
+
+
+    /* SearchBar resize */
+    /*
+    header .search-wrapper {
+        padding: 0 18px;
+        margin: 0 -12px;
+        display: block;
+        clear: left;
+        top: 60px;
+        margin: 0;
+        padding: 0 10px;
+        border-top: 1px solid #e2e2e2;
+        position: relative;
+        top: 0;
+        z-index: 5;
+    }
+    header .search-browse-inner {
+        position: relative;
+    }
+    */
+
 }
 
 @media only screen and (max-width: 600px){
