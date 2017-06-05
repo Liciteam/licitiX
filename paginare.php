@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -38,7 +38,7 @@ and open the template in the editor.
                 </a>
 				<div class="search-wrapper">
                     <div class="search-inner with-pointer">
-                        <form id="nav-search" class="search-nav expanded-search nav-height" method="GET" action="/search.php">
+                        <form id="nav-search" class="search-nav expanded-search nav-height" method="GET" action="search.php">
                             <div class="gnav-search-inner clearable">
                                 <div class="search-input-wrapper text-field-wrapper">
                                     <input id="search-query" class="search-input dropdown-relative-positioned rounded" type="text" placeholder="Search for items" name="search_query" value="" autocomplete="off" autocorrect="off" autocapitalize="off">
@@ -154,7 +154,7 @@ and open the template in the editor.
 		                        </a>
 		                    </li>
 		                    <li>
-		                        <a class="sub-nav-text-link" href="add_item.html" id="sub-nav-user-menu-5">
+		                        <a class="sub-nav-text-link" href="home.html" id="sub-nav-user-menu-5">
 		                            Add an item
 		                        </a>
 		                    </li>
@@ -165,7 +165,7 @@ and open the template in the editor.
 		                    </li>
 		                            
 		                    <li class="top-divider" >
-		                        <a class="sub-nav-text-link sign-out" href="signout.php" id="sub-nav-user-menu-7">
+		                        <a class="sub-nav-text-link sign-out" href="home.html" id="sub-nav-user-menu-7">
 		                            Sign out
 		                        </a>
 		                    </li>
@@ -180,23 +180,19 @@ and open the template in the editor.
 
         <nav id="menubar">
 			<div class="container">
-	            <a href="paginare.php">Fashion</a>
-	            <a href="paginare.php">Electronics</a>
-	            <a href="paginare.php">Art</a>
-	            <a href="paginare.php">Sporting Goods</a>
-	            <a href="paginare.php">Motors</a>
-	            <a href="paginare.php">Estate</a>
-	            <a href="paginare.php">Luxurya</a>
-	            <a href="paginare.php">Antiques</a>
-	            <a href="paginare.php">Collectibles</a>
+	            <a href="paginare.php?filtru=Fashion">Fashion</a>
+	            <a href="paginare.php?filtru=Electronics">Electronics</a>
+	            <a href="paginare.php?filtru=Art">Art</a>
+	            <a href="paginare.php?filtru=Sporting Goods">Sporting Goods</a>
+	            <a href="paginare.php?filtru=Motors">Motors</a>
+	            <a href="paginare.php?filtru=Estate">Estate</a>
+	            <a href="paginare.php?filtru=Luxurya">Luxurya</a>
+	            <a href="paginare.php?filtru=Antiques">Antiques</a>
+	            <a href="paginare.php?filtru=Collectibles">Collectibles</a>
         	</div>
         </nav>
-        <div id="filtru">
         <?php
-        include 'filtrare.php';
-        ?>
-        </div>
-        <?php
+        $filtru = $_GET['filtru'];
         include 'list.php';
         ?>
 
