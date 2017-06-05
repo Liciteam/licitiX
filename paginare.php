@@ -22,28 +22,6 @@ and open the template in the editor.
 		<link rel="stylesheet" href="./styles/nav_bar.css" type="text/css"/>
         <link rel="stylesheet" href="./styles/paginare.css" type="text/css"/>
         <link rel="stylesheet" href="./styles/footer.css" type="text/css"/>
-        <script type="text/javascript">
-			document.onclick = function(e){
-				var settings = document.getElementById('user-nav-id');
-			    var target = (e && e.target) || (event && event.srcElement);
-			    var display = 'none';
-
-			    while (target.parentNode) {
-
-			        if (target == settings) {
-			        	if (document.getElementById('sub-nav-user-navigation').style.display == 'block')
-			            	display ='none';
-			            else 
-			            	display = 'block'
-			            break;
-			        }
-			        target = target.parentNode;
-			    }
-
-				document.getElementById('sub-nav-user-navigation').style.display = display;
-
-			}
-		</script>
 
     </head>
 
@@ -205,7 +183,7 @@ and open the template in the editor.
 	            <a href="paginare.php?filtru=Fashion">Fashion</a>
 	            <a href="paginare.php?filtru=Electronics">Electronics</a>
 	            <a href="paginare.php?filtru=Art">Art</a>
-	            <a href="paginare.php?filtru=Sporting Goods">Sporting Goods</a>
+	            <a href="paginare.php?filtru=Sporting_Goods">Sporting Goods</a>
 	            <a href="paginare.php?filtru=Motors">Motors</a>
 	            <a href="paginare.php?filtru=Estate">Estate</a>
 	            <a href="paginare.php?filtru=Luxurya">Luxurya</a>
