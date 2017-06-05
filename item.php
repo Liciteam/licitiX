@@ -172,19 +172,18 @@ and open the template in the editor.
 		</header>
 
         <nav id="menubar">
-            <div class="container">
-                <a href="item.html/?ursa">Fashion</a>
-                <a href="paginare.html">Electronics</a>
-                <a href="paginare.html">Art</a>
-                <a href="paginare.html">Sporting Goods</a>
-                <a href="paginare.html">Motors</a>
-                <a href="paginare.html">Estate</a>
-                <a href="paginare.html">Luxurya</a>
-                <a href="paginare.html">Antiques</a>
-                <a href="paginare.html">Collectibles</a>
-            </div>
-        </nav>
-        
+			<div class="container">
+	            <a href="paginare.php?filtru=Fashion">Fashion</a>
+	            <a href="paginare.php?filtru=Electronics">Electronics</a>
+	            <a href="paginare.php?filtru=Art">Art</a>
+	            <a href="paginare.php?filtru=Sporting_Goods">Sporting Goods</a>
+	            <a href="paginare.php?filtru=Motors">Motors</a>
+	            <a href="paginare.php?filtru=Estate">Estate</a>
+	            <a href="paginare.php?filtru=Luxurya">Luxurya</a>
+	            <a href="paginare.php?filtru=Antiques">Antiques</a>
+	            <a href="paginare.php?filtru=Collectibles">Collectibles</a>
+        	</div>
+        </nav>        
         <br>
 
 	<body>
