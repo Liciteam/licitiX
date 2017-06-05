@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -154,7 +154,7 @@ and open the template in the editor.
 		                        </a>
 		                    </li>
 		                    <li>
-		                        <a class="sub-nav-text-link" href="home.html" id="sub-nav-user-menu-5">
+		                        <a class="sub-nav-text-link" href="add_item.html" id="sub-nav-user-menu-5">
 		                            Add an item
 		                        </a>
 		                    </li>
@@ -165,7 +165,7 @@ and open the template in the editor.
 		                    </li>
 		                            
 		                    <li class="top-divider" >
-		                        <a class="sub-nav-text-link sign-out" href="home.html" id="sub-nav-user-menu-7">
+		                        <a class="sub-nav-text-link sign-out" href="signout.php" id="sub-nav-user-menu-7">
 		                            Sign out
 		                        </a>
 		                    </li>
@@ -180,15 +180,15 @@ and open the template in the editor.
 
         <nav id="menubar">
 			<div class="container">
-	            <a href="paginare.html">Fashion</a>
-	            <a href="paginare.html">Electronics</a>
-	            <a href="paginare.html">Art</a>
-	            <a href="paginare.html">Sporting Goods</a>
-	            <a href="paginare.html">Motors</a>
-	            <a href="paginare.html">Estate</a>
-	            <a href="paginare.html">Luxurya</a>
-	            <a href="paginare.html">Antiques</a>
-	            <a href="paginare.html">Collectibles</a>
+	            <a href="paginare.php">Fashion</a>
+	            <a href="paginare.php">Electronics</a>
+	            <a href="paginare.php">Art</a>
+	            <a href="paginare.php">Sporting Goods</a>
+	            <a href="paginare.php">Motors</a>
+	            <a href="paginare.php">Estate</a>
+	            <a href="paginare.php">Luxurya</a>
+	            <a href="paginare.php">Antiques</a>
+	            <a href="paginare.php">Collectibles</a>
         	</div>
         </nav>
         <div id="filtru">

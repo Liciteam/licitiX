@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -159,7 +159,7 @@ and open the template in the editor.
 		                    </li>
 		                            
 		                    <li class="top-divider" >
-		                        <a class="sub-nav-text-link sign-out" href="home.html" id="sub-nav-user-menu-7">
+		                        <a class="sub-nav-text-link sign-out" href="signout.php" id="sub-nav-user-menu-7">
 		                            Sign out
 		                        </a>
 		                    </li>

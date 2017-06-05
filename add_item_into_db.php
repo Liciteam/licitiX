@@ -42,8 +42,14 @@
 
 					if(1)
 					{
-						if( isset($_FILES['image']) )
-						echo "<script type='text/javascript'>alert('Please select a photo !')</script>";
+						if(!file_exists($_FILES['image']['tmp_name']) || !is_uploaded_file($_FILES['image']['tmp_name']))
+						{
+							echo "<script type='text/javascript'>alert('Please select a photo !')</script>";
+						}
+						else
+						{
+							$bool = 1;
+						}
 
 						if( empty($_POST['title']) )
 							echo "<script type='text/javascript'>alert('Please complete the title field !')</script>";
