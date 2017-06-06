@@ -24,7 +24,7 @@
 					$enddate = $_POST['enddate'];
 					$keywords = $_POST['keywords'];
 					$email = $_SESSION['email'];
-					$result = mysql_query("SELECT user_id FROM sql11178361.users where email = '$email'",$conn);
+					$result = mysql_query("SELECT user_id FROM users where email = '$email'",$conn);
 					$row = mysql_fetch_array($result);
 					$user_id=$row[0];
 				
@@ -40,7 +40,7 @@
 					//echo "$email <br> <br>";
 					//echo "$user_id <br> <br>";
 
-					if(1)
+					if(0)
 					{
 						if(!file_exists($_FILES['image']['tmp_name']) || !is_uploaded_file($_FILES['image']['tmp_name']))
 						{
@@ -97,7 +97,7 @@
 							$res = mysql_query($query,$conn);
 
 							//echo "<script type='text/javascript'>alert('Your item was successfully added.')</script>";
-							include'paginare.html';
+							include'home.html';
 						}	
 		}
 ?>
