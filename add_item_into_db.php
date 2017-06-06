@@ -1,8 +1,8 @@
 <?php
 	session_start();
 	ini_set('upload_max_filesize', '2000M');
-		$conn = mysql_connect("sql11.freemysqlhosting.net", "sql11178361","NIK1rC4p5q" ) OR DIE('Unable to connect, fuck my life! ');
-		mysql_select_db("sql11178361", $conn);
+		$conn = mysql_connect("localhost", "root","" ) OR DIE('Unable to connect, fuck my life! ');
+		mysql_select_db("licitix", $conn);
 
 		if (!$conn) {
 	    	die('Eșec la conectare: ' . mysql_error());
@@ -87,7 +87,7 @@
 							  	echo "File is valid, and was successfully uploaded.\n";
 							} 
 
-							$query = "insert into sql11178361.items ( title,description, keywords, short_description, picture,
+							$query = "insert into items ( title,description, keywords, short_description, picture,
 		                                              seller_id,  category, auction_start_date, auction_end_date,price)
 											values( '$title','$description', '$keywords','$short_description', '$image',
 											       $user_id,'$category', '$startdate', 
@@ -96,7 +96,7 @@
 
 							$res = mysql_query($query,$conn);
 
-							echo "<script type='text/javascript'>alert('Your item was successfully added.')</script>";
+							//echo "<script type='text/javascript'>alert('Your item was successfully added.')</script>";
 							include'paginare.html';
 						}	
 		}

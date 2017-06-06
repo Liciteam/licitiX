@@ -123,7 +123,7 @@
 #boxes .box{
 	float:left;
 	text-align: center;
-	width: 30%;
+	width: 29%;
 	padding: 0px 20px 0px;
 }
 
@@ -158,6 +158,13 @@ footer{
 	#showcase .container {
 		height: 250px;
 	}
+	#boxes .box h3, #boxes .box p{
+		float: none;
+		clear: both;
+		display: block;
+		text-align: center;
+		width:auto;
+	}
 }
 @media only screen and (max-width: 767px){
 
@@ -172,5 +179,6 @@ footer{
 	    float: left;
 	    width: 100%;
 	}
+	
 }
 

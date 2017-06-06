@@ -5,8 +5,8 @@
 
 	//$conn = new mysqli("localhost", "root", "", "licitix");
 	// $conn = new mysqli("sql11.freemysqlhosting.net","sql11178361", "NIK1rC4p5q");
-	$conn = mysql_connect("sql11.freemysqlhosting.net", "sql11178361","NIK1rC4p5q" ) OR DIE('Unable to connect, fuck my life! ');
-	mysql_select_db("sql11178361", $conn);
+	$conn = mysql_connect("localhost", "root","" ) OR DIE('Unable to connect, fuck my life! ');
+	mysql_select_db("licitix", $conn);
 	if (!$conn) {
     die('Eșec la conectare: ' . mysql_error());
 	}
@@ -23,7 +23,7 @@
 		$password = trim($_POST['password']);
 		$password = md5($password);
 		
-		$sql = "SELECT * FROM sql11178361.users WHERE EMAIl = '$email' AND PASSWORD = '$password'";
+		$sql = "SELECT * FROM users WHERE EMAIl = '$email' AND PASSWORD = '$password'";
 
 		echo $sql;
 		echo '<br>';
@@ -44,7 +44,7 @@
 			echo "string";
 			$_SESSION['email'] = $email;
 			$_SESSION['name'] = $num_rows[1];
-			//header("Location: home.php");
+			header("Location: home.php");
 		}
 		else
 		{

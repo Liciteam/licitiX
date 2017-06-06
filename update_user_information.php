@@ -1,8 +1,8 @@
 <?php
 	session_start();
 	ini_set('upload_max_filesize', '2000M');
-		$conn = mysql_connect("sql11.freemysqlhosting.net", "sql11178361","NIK1rC4p5q" ) OR DIE('Unable to connect, fuck my life! ');
-		mysql_select_db("sql11178361", $conn);
+		$conn = mysql_connect("localhost", "root","" ) OR DIE('Unable to connect, fuck my life! ');
+		mysql_select_db("licitix", $conn);
 
 		if (!$conn) {
 	    	die('Eșec la conectare: ' . mysql_error());
@@ -25,7 +25,7 @@
 					$old_password=md5($old_password);
 					$semail = $_SESSION['email'];
 				
-				$result = mysql_query("UPDATE sql11178361.users SET name = '$name', email ='$email',password= '$password', adress = '$adress' where email = '$semail' and password= '$old_password'",$conn);
+				$result = mysql_query("UPDATE users SET name = '$name', email ='$email',password= '$password', adress = '$adress' where email = '$semail' and password= '$old_password'",$conn);
 				
 					//echo "$title <br> <br>";
 					//echo "$category <br> <br>";
@@ -37,7 +37,7 @@
 					//echo "$keywords <br> <br>";
 					//echo "$email <br> <br>";
 					//echo "$user_id <br> <br>";
-					echo "<script type='text/javascript'>alert('Your profile information were updated')</script>";
+					//echo "<script type='text/javascript'>alert('Your profile information were updated')</script>";
 					include'home.html';
 
 		}

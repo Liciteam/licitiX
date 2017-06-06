@@ -1,5 +1,5 @@
 <?php
-	$conn = new mysqli("sql11.freemysqlhosting.net", "sql11178361","NIK1rC4p5q", "sql11178361");
+	$conn = new mysqli("localhost", "root","", "licitix");
 	//echo $_SESSION['tata'];
 
 	$sql = "SELECT user_id, name, email, password, adress FROM users";

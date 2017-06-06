@@ -1,6 +1,6 @@
 <?php
 
-$conn = new mysqli("sql11.freemysqlhosting.net", "sql11178361","NIK1rC4p5q", "sql11178361");
+$conn = new mysqli("localhost", "root","", "licitix");
 
 
 $result = $conn->query("SELECT item_id, picture, title, short_description, price, auction_start_date, auction_end_date FROM items where category like '%$filtru%' or keywords like '%$filtru%' or title like '%$filtru%'");

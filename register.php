@@ -1,8 +1,8 @@
 <?php
 	session_start();
 
-	$conn = mysql_connect("sql11.freemysqlhosting.net", "sql11178361","NIK1rC4p5q" ) OR DIE('Unable to connect, fuck my life! ');
-	mysql_select_db("sql11178361", $conn);
+	$conn = mysql_connect("localhost", "root","" ) OR DIE('Unable to connect, fuck my life! ');
+	mysql_select_db("licitix", $conn);
 
 	if (!$conn) {
     die('Eșec la conectare: ' . mysql_error());
@@ -32,7 +32,7 @@
 		
 
 		$password = md5($password);
-		$sql = "INSERT INTO sql11178361.users(name, email, password, adress) VALUES ('$name', '$email', '$password', '$adress')";
+		$sql = "INSERT INTO users(name, email, password, adress) VALUES ('$name', '$email', '$password', '$adress')";
 		
 
 		// $conn->query($sql);

@@ -1,6 +1,6 @@
 <?php
 	
-	$conn = new mysqli("sql11.freemysqlhosting.net", "sql11178361","NIK1rC4p5q", "sql11178361");
+	$conn = new mysqli("localhost", "root","", "licitix");
 
 	$first_name = $_GET['firstname'];
 	$last_name = $_GET['lastname'];
