@@ -1,36 +1,24 @@
 <?php if (session_id() == '' || !isset($_SESSION)) session_start(); ?>
 
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-
 <html>
-    <head>
-    	<meta charset="UTF-8">
-    	<meta name="viewport" content="width=device-width">
-        <link rel="icon" href="images/icon.png" />
-        <title>Items - LicitiX</title>
-        
-        <meta name="viewport" content="width=device-width">
-        <meta name="description" content="Buy or sell all types of items in our online auction">
-        <meta name="keywords" content="auction site, auction online, buy, sell, auction shop">
-        <meta name="authors" content="Alexandru Rusu, Claudia Lucasi, Cristian Iacob">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" href="images/icon.png" />
+		<title>LicitiX.com | Auction is life</title>
+		<meta name="description" content="Buy or sell all types of items in our online auction">
+		<meta name="keywords" content="auction site, auction online, buy, sell, auction shop">
+		<meta name="authors" content="Alexandru Rusu, Claudia Lucasi, Cristian Iacob">
 
 		<link rel="stylesheet" href="./styles/global.css" type="text/css"/>
 		<link rel="stylesheet" href="./styles/header.css" type="text/css"/>
 		<link rel="stylesheet" href="./styles/nav_bar.css" type="text/css"/>
-        <link rel="stylesheet" href="./styles/paginare.css" type="text/css"/>
-        <link rel="stylesheet" href="./styles/footer.css" type="text/css"/>
-
+		<link rel="stylesheet" href="./styles/home.css" type="text/css"/>
+		
 		<script src="./script/header.js"></script>
-    </head>
-
-    <body>
-
-
+	</head>
+	<body>
 		<header>
 			<div class="container">
 				<div id="branding" class="nav-height">
@@ -41,7 +29,7 @@ and open the template in the editor.
                 </a>
 				<div class="search-wrapper">
                     <div class="search-inner with-pointer">
-                        <form id="nav-search" class="search-nav expanded-search nav-height" method="GET" action="search.php">
+                        <form id="nav-search" class="search-nav expanded-search nav-height" method="GET" action="/search.php">
                             <div class="gnav-search-inner clearable">
                                 <div class="search-input-wrapper text-field-wrapper">
                                     <input id="search-query" class="search-input dropdown-relative-positioned rounded" type="text" placeholder="Search for items" name="search_query" value="" autocomplete="off" autocorrect="off" autocapitalize="off">
@@ -127,13 +115,9 @@ and open the template in the editor.
 		                <ul>
 		                    <li class="bottom-divider no-extra-space gnav-user with-pointer">
 		                        <a  href="viewprofile.php" id="sub-nav-user-menu-0">
-		                            <img class="avatar" <?php if(isset($_SESSION['profile_picture'])) { 
-		                                						echo 'src="' . $_SESSION['profile_picture'] . '"'; 
-		                                					} else echo 'src="../images/header/profile.png"' ?> style="background-size: 100px;" alt="">
+		                            <img class="avatar" src="https://img1.etsystatic.com/175/0/23958548/iusa_75x75.50054149_nnn8.jpg" alt="">
 		                            <div class="details">
-		                                <p class="name"><?php if(isset($_SESSION['name'])) { 
-		                                						echo $_SESSION['name']; 
-		                                					} else if(isset($_SESSION['email'])) echo "Welcome " . $_SESSION['email'] ?></p>
+		                                <p class="name"><?php if(isset($_SESSION['name'])) { echo $_SESSION['name']; }?></p>
 		                                <div class="profile-link">
 		                                	<span id="profile-link-label" >View profile</span>
 		                                	<span class="gnav-icon gnav-right"></span>
@@ -164,7 +148,7 @@ and open the template in the editor.
 		                        </a>
 		                    </li>
 		                    <li>
-		                        <a class="sub-nav-text-link" href="add_item.html" id="sub-nav-user-menu-5">
+		                        <a class="sub-nav-text-link" href="home.php" id="sub-nav-user-menu-5">
 		                            Add an item
 		                        </a>
 		                    </li>
@@ -254,13 +238,12 @@ and open the template in the editor.
 
 		</header>
 
-
-        <nav id="menubar">
+		<nav id="menubar">
 			<div class="container">
 	            <a href="paginare.php?filtru=Fashion">Fashion</a>
 	            <a href="paginare.php?filtru=Electronics">Electronics</a>
 	            <a href="paginare.php?filtru=Art">Art</a>
-	            <a href="paginare.php?filtru=Sporting_Goods">Sporting Goods</a>
+	            <a href="paginare.php?filtru=Sporting Goods">Sporting Goods</a>
 	            <a href="paginare.php?filtru=Motors">Motors</a>
 	            <a href="paginare.php?filtru=Estate">Estate</a>
 	            <a href="paginare.php?filtru=Luxurya">Luxurya</a>
@@ -268,14 +251,49 @@ and open the template in the editor.
 	            <a href="paginare.php?filtru=Collectibles">Collectibles</a>
         	</div>
         </nav>
-        <?php
-        $filtru = $_GET['filtru'];
-        include 'list.php';
-        ?>
 
-		<br><br><br><br>
-		    <footer id = "footer">
-  <P class="blocktext">© Copyright 2017, All Rights Reserved</p>
-</footer>
-    </body>
-</html>
+<?php
+		$conn = mysql_connect("sql11.freemysqlhosting.net", "sql11178361","NIK1rC4p5q" ) OR DIE('Unable to connect, fuck my life! ');
+		mysql_select_db("sql11178361", $conn);
+
+		if (!$conn) {
+	    	die('Eșec la conectare: ' . mysql_error());
+		}
+		else
+		{
+			
+					$email = $_SESSION['email'];
+
+			$result = mysql_query("SELECT * FROM sql11178361.users where email = '$email'",$conn);
+
+
+				while($row3 = mysql_fetch_array($result))
+				{ 
+				$name=$row3['name'];
+				$email=$row3['email'];
+				$address=$row3['adress'];
+				}
+		}
+?>
+
+ <form action="update_user_information.php"" method="POST" enctype="multipart/form-data">
+ <strong><h1>Edit your profile</h1></strong><br>
+     <fieldset>
+        <legend> Your personal details</legend>
+        Name :<br><textarea name="name" rows="2" cols="50"><?php echo $name ?></textarea><br><br>
+        Email :<br><textarea name="email" rows="2" cols="50"><?php echo $email ?></textarea><br><br>
+        Old password :<br><input type="password" name="psw_old"><br><br>
+        Change password :<br><input type="password" name="psw"><br><br>
+        Address :<br><textarea name="address" rows="2" cols="50"><?php echo $address ?></textarea><br><br>
+    </fieldset><br><br>
+   <input type="submit" name="sumit" value="Update" /><br><br><br><br>
+   </form>
+
+   <style type="text/css">
+   	form {
+  width: 1000px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+   </style>

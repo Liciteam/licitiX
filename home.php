@@ -29,7 +29,7 @@
                 </a>
 				<div class="search-wrapper" style="display:none">
                     <div class="search-inner with-pointer">
-                        <form id="nav-search" class="search-nav expanded-search nav-height" method="GET" action="/search.php">
+                        <form id="nav-search" class="search-nav expanded-search nav-height" method="GET" action="search.php">
                             <div class="gnav-search-inner clearable">
                                 <div class="search-input-wrapper text-field-wrapper">
                                     <input id="search-query" class="search-input dropdown-relative-positioned rounded" type="text" placeholder="Search for items" name="search_query" value="" autocomplete="off" autocorrect="off" autocapitalize="off">
@@ -268,7 +268,7 @@
         		</div>
         		<div class="search-wrapper">
                     <div class="search-inner with-pointer">
-                        <form id="section-search" class="search-nav expanded-search nav-height" method="GET" action="/search.php">
+                        <form id="section-search" class="search-nav expanded-search nav-height" method="GET" action="search.php">
                             <div class="gnav-search-inner clearable">
                                 <div class="search-input-wrapper text-field-wrapper">
                                     <input id="section-search-query" class="search-input dropdown-relative-positioned rounded" type="text" placeholder="What are you searching for?" name="search_query" value="" autocomplete="off" autocorrect="off" autocapitalize="off">
