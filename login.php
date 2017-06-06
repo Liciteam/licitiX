@@ -43,7 +43,8 @@
 		if($num_rows > 0){
 			echo "string";
 			$_SESSION['email'] = $email;
-			$_SESSION['name'] = $num_rows[1];
+			$_SESSION['name'] = $res[1];
+			
 			header("Location: home.php");
 		}
 		else

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Scholarly HTML — Markedly Smart</title>
+    <link rel="stylesheet" href="scholary.css">
+    <link rel="stylesheet" href="prism-coy.css">
+    <script src="node_modules/prismjs/prism.js" defer></script>
+  </head>
+  <body prefix="schema: http://schema.org/ xsd: http://www.w3.org/2001/XMLSchema# sa: https://ns.science.ai/">
+    <header>
+      <p class="title">LicitiX</p>
+      <p class="subtitle">Web application for auctions online </p>
+    </header>
+    <article id="what" typeof="schema:ScholarlyArticle" resource="#">
+      <h1>LicitiX</h1>
+      <section>
+        <ol>
+          <li property="schema:author" typeof="sa:ContributorRole">
+            <a property="schema:author" href="https://github.com/claudialucasi" typeof="schema:Person">
+              <span property="schema:givenName">Claudia</span>
+              <span property="schema:familyName">Lucasi</span>
+            </a>
+            <a href="#scienceai" property="sa:roleAffiliation" resource="http://science.ai/">a</a>
+            <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+              <a property="schema:email" href="lucasi.claudia@gmail.com" title="corresponding author">&#9993;</a>
+            </sup>
+          </li>
+          <li property="schema:author" typeof="sa:ContributorRole">
+            <a property="schema:author" href="https://github.com/alexandru-rusu" typeof="schema:Person">
+              <span property="schema:givenName">Alexandru</span>
+              <span property="schema:familyName">Rusu</span>
+            </a>
+            <a href="#scienceai" property="sa:roleAffiliation" resource="http://science.ai/">a</a>
+            <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+              <a property="schema:email" href="1alexandru.rusu@gmail.com" title="corresponding author">&#9993;</a>
+            </sup>
+          </li>
+          <li property="schema:author" typeof="sa:ContributorRole">
+            <a property="schema:author" href="https://github.com/iacobcristi" typeof="schema:Person">
+              <span property="schema:givenName">Cristian</span>
+              <span property="schema:familyName">Iacob</span>
+            </a>
+            <a href="#scienceai" property="sa:roleAffiliation" resource="http://science.ai/">a</a>
+            <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+              <a property="schema:email" href="ddpv.cristi@gmail.com" title="corresponding author">&#9993;</a>
+            </sup>
+          </li>
+        </ol>
+        <ol>
+          <li id="scienceai">
+            <a href="http://www.info.uaic.ro/bin/Main/" typeof="schema:Corporation">
+              <span property="schema:name">FII ,U.A.I.C</span>
+            </a>
+          </li>
+        </ol>
+      </section>
+
+      <section typeof="sa:Abstract" id="abstract">
+        <h2>Despre proiect</h2>
+        <p>
+          Proiectul consta in conceperea unei aplicatii Web destinate realizarii licitatiilor de produse cu caracter personal, asemanatoare celor de pe eBay.
+        </p>
+
+      </section>
+      <section typeof="sa:MaterialsAndMethods" id="motivation">
+        <h2>Alegere Proiect</h2>
+        Data alegerii proiectului : 28.03.2016. (Finalizat)
+        <p>
+          In urma discutiei intre membrii echipei , s-a hotarat 20.AuctioX.
+                  <p><h2> Stabilirea obiectivelor de proiectare</h2></p>
+        <p> Aplicatia este realizata pentru a facilita urmatoarele :</p>
+                <p>- Vizualizarea produselor licitate ( cautare cu filtre )</p>
+                <p>- Vizualizarea meta-datelor unui produs</p>
+                <p>- Introducerea de obiecte spre a fi licitate</p>
+                <p>- Realizarea licitatiilor printr-un sistem de plata real</p>
+                <p>- Sugestii de produse pe baza preferintelor utilizatorului</p>
+        </p>
+      </section>
+      <section typeof="sa:FirstMeeting" id="meeting">
+        <h2>Stabilirea arhitecturii proiectului</h2>
+        <p>
+          Data implementarii arhitecturii : 05.04.2016 (Partial)
+          <ol>
+          <li>Stabilirea design-ului .</li> 
+          <li>Realizarea diagramelor Bazei de date + stabilirea relatiilor dintre acestea .</li>
+          </ol>
+        </p>
+        </section>
+      <section typeof="sa:LastMeeting" id="meeting2">
+        <h2>Continuarea si finalizarea arhitecturii</h2>
+        <p>
+          Data continuarii arhitecturii : 13.04.2016 (Finalizat)
+          <ol>
+          <li>Crearea diagramelor USE CASE .</li> 
+          <li>Crearea diagramei de componente .</li>
+          </ol>
+        </p>
+        </section>
+      <section typeof="sa:Report" id="report">
+        <h2>Realizarea raportului</h2>
+        <p>
+          Data realizarii raportului : 15.04.2016 (Finalizat)
+          <ol>
+          <li>Familiarizarea cu -scholarly HTML-</li> 
+          <li>Completarea raportului conform criteriilor .</li>
+          </ol>
+        </p>
+        </section>
+        <section id="article">
+          <h2>Structura arhitecturii</h2>
+          <ol>
+            <h3><li>Schita proiectului</h3>
+              <ol>
+                <h3>Pentru utilizator</h3>
+                <li>Pagina Start Up</li>
+                <img src = "e:\Licitatie\licitiX\images\index.png">
+                <li>Pagina Home</li>
+                <img src = "e:\Licitatie\licitiX\images\home.png">
+                <li>Register & Login</li>
+                <img src ="e:\Licitatie\licitiX\images\register&signup.png">
+                <li>Drop down menu for user</li>
+                <img src = "e:\Licitatie\licitiX\images\dropdownmenudoruser.png">
+
+                <li>Pagina de update a profilului utilizatorului</li>
+                <img src = "e:\Licitatie\licitiX\images\edit.png">
+                <li>Adaugare obiect spre licitare</li>
+                <img src = "e:\Licitatie\licitiX\images\additem.png">
+                <li>Pagina Contact</li>
+                <img src = "e:\Licitatie\licitiX\images\Contact.png">
+                <h2 align = "left">Functionalitatea de cautare va fi prezenta in oricare dintre aceste pagini<h2>
+                <img src = "e:\Licitatie\licitiX\images\searchbar.png">
+
+                
+                <h3>Pentru administratorul bazei de date</h3>
+                <li>Pagina Login</li>
+                <img src = "e:\Licitatie\licitiX\images\adminlogin.png">
+                <p>Aceasta pagina precum si restul aferente administratorului nu vor fi la indemana utilizatorului , in sensul ca el nu va avea o interfata pentru accesarea acestora.<br></br>Login pentru administrator .</p>
+                <br></br>
+              </ol>
+            </li>
+            <h3><li>Diagrama Bazei de date</h3>
+              <img src = "e:\Licitatie\licitiX\images\bd.png">
+              <p>Schita bazei de date si relatia dintre tabele .</p>
+            </li>
+        </section>
+
+     
+      <section typeof="sa:ReferenceList" id="references">
+        <h2>Referinte</h2>
+        <dl>
+          <dt>NYT, 2014</dt>
+          <dd id="ref-nyt" typeof="schema:ScholarlyArticle"
+              resource="http://www.scribd.com/doc/224608514/The-Full-New-York-Times-Innovation-Report">
+            <cite property="schema:name"><a
+              href="http://www.scribd.com/doc/224608514/The-Full-New-York-Times-Innovation-Report">The
+              Full New York Times Innovation Report</a></cite>,
+            by
+            <span property="schema:author" typeof="schema:Person">
+              <span property="schema:name">New York Times</span>
+            </span>;
+            <time property="schema:datePublished" datetime="2014-03" datatype="xsd:gYearMonth">2014 Mar</time>.
+          </dd>
+          <dt>Science.AI, 2015a</dt>
+          <dd id="ref-sa-ontology" typeof="schema:ScholarlyArticle"
+              resource="https://github.com/scienceai/scholarly-article/blob/master/scholarly-article.json">
+            <cite property="schema:name"><a
+              href="https://github.com/scienceai/scholarly-article/blob/master/scholarly-article.json">The
+              Scholarly Article ontology</a></cite>,
+            by
+            <span property="schema:author" typeof="schema:Person">
+              <span property="schema:name">Science.AI</span>
+            </span>;
+            <time property="schema:datePublished" datetime="2015-09" datatype="xsd:gYearMonth">2015 Sep</time>.
+          </dd>
+          <dt>Science.AI, 2015b</dt>
+          <dd id="ref-vernacular" typeof="schema:ScholarlyArticle" resource="http://vernacular.io/">
+            <cite property="schema:name"><a href="http://vernacular.io/">Vernacular — HTML Made Special</a></cite>,
+            by
+            <span property="schema:author" typeof="schema:Person">
+              <span property="schema:name">Science.AI</span>
+            </span>;
+            <time property="schema:datePublished" datetime="2015-10" datatype="xsd:gYearMonth">2015 Oct</time>.
+          </dd>
+        </dl>
+      </section>
+    </article>
+    <footer>
+      <p>
+        •
+        <a href = "#">Team Licitix</a>
+        •
+        <a href="https://github.com/Liciteam/licitiX">@T.W. AuctioX</a>
+        •
+      </p>
+    </footer>
+  </body>
+</html>
