@@ -253,8 +253,8 @@
         </nav>
 
 <?php
-		$conn = mysql_connect("sql11.freemysqlhosting.net", "sql11178361","NIK1rC4p5q" ) OR DIE('Unable to connect, fuck my life! ');
-		mysql_select_db("sql11178361", $conn);
+		$conn = mysql_connect("localhost", "root","" ) OR DIE('Unable to connect, fuck my life! ');
+		mysql_select_db("licitix", $conn);
 
 		if (!$conn) {
 	    	die('Eșec la conectare: ' . mysql_error());
@@ -264,7 +264,7 @@
 			
 					$email = $_SESSION['email'];
 
-			$result = mysql_query("SELECT * FROM sql11178361.users where email = '$email'",$conn);
+			$result = mysql_query("SELECT * FROM users where email = '$email'",$conn);
 
 
 				while($row3 = mysql_fetch_array($result))
