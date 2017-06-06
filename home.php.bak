@@ -29,7 +29,7 @@
                 </a>
 				<div class="search-wrapper" style="display:none">
                     <div class="search-inner with-pointer">
-                        <form id="nav-search" class="search-nav expanded-search nav-height" method="GET" action="/search.php">
+                        <form id="nav-search" class="search-nav expanded-search nav-height" method="GET" action="search.php">
                             <div class="gnav-search-inner clearable">
                                 <div class="search-input-wrapper text-field-wrapper">
                                     <input id="search-query" class="search-input dropdown-relative-positioned rounded" type="text" placeholder="Search for items" name="search_query" value="" autocomplete="off" autocorrect="off" autocapitalize="off">
@@ -115,9 +115,9 @@
 		                <ul>
 		                    <li class="bottom-divider no-extra-space gnav-user with-pointer">
 		                        <a  href="viewprofile.php" id="sub-nav-user-menu-0">
-		                            <img class="avatar" src="<?php if(isset($_SESSION['profile_picture'])) { 
-		                                						echo $_SESSION['profile_picture']; 
-		                                					} else echo '../images/header/profile.png' ?>" style="background-size: 100px;" alt="">
+		                            <img class="avatar" <?php if(isset($_SESSION['profile_picture'])) { 
+		                                						echo 'src="' . $_SESSION['profile_picture'] . '"'; 
+		                                					} else echo 'src="../images/header/profile.png"' ?> style="background-size: 100px;" alt="">
 		                            <div class="details">
 		                                <p class="name"><?php if(isset($_SESSION['name'])) { 
 		                                						echo $_SESSION['name']; 
@@ -152,7 +152,7 @@
 		                        </a>
 		                    </li>
 		                    <li>
-		                        <a class="sub-nav-text-link" href="home.php" id="sub-nav-user-menu-5">
+		                        <a class="sub-nav-text-link" href="add_item.html" id="sub-nav-user-menu-5">
 		                            Add an item
 		                        </a>
 		                    </li>
@@ -268,7 +268,7 @@
         		</div>
         		<div class="search-wrapper">
                     <div class="search-inner with-pointer">
-                        <form id="section-search" class="search-nav expanded-search nav-height" method="GET" action="/search.php">
+                        <form id="section-search" class="search-nav expanded-search nav-height" method="GET" action="search.php">
                             <div class="gnav-search-inner clearable">
                                 <div class="search-input-wrapper text-field-wrapper">
                                     <input id="section-search-query" class="search-input dropdown-relative-positioned rounded" type="text" placeholder="What are you searching for?" name="search_query" value="" autocomplete="off" autocorrect="off" autocapitalize="off">

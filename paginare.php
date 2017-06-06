@@ -128,12 +128,12 @@ and open the template in the editor.
 		                    <li class="bottom-divider no-extra-space gnav-user with-pointer">
 		                        <a  href="viewprofile.php" id="sub-nav-user-menu-0">
 		                            <img class="avatar" <?php if(isset($_SESSION['profile_picture'])) { 
-		                                						echo 'src="' . $_SESSION['profile_picture'] . '"'; 
-		                                					} else echo 'src="../images/header/profile.png"' ?> style="background-size: 100px;" alt="">
+		                                						echo 'src="./images/header/' . $_SESSION['profile_picture'] . '"'; 
+		                                					} else echo 'src="./images/header/profile.png"' ?> style="background-size: 10px;" alt="">
 		                            <div class="details">
 		                                <p class="name"><?php if(isset($_SESSION['name'])) { 
 		                                						echo $_SESSION['name']; 
-		                                					} else if(isset($_SESSION['email'])) echo "Welcome " . $_SESSION['email'] ?></p>
+		                                					} else if(isset($_SESSION['email'])) echo  $_SESSION['email'] ?></p>
 		                                <div class="profile-link">
 		                                	<span id="profile-link-label" >View profile</span>
 		                                	<span class="gnav-icon gnav-right"></span>

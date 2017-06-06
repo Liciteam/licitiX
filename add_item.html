@@ -19,28 +19,9 @@ and open the template in the editor.
         <link rel="stylesheet" href="./styles/nav_bar.css" type="text/css"/>
         <link rel="stylesheet" href="./styles/add_item.css" type="text/css"/>
         <link rel="stylesheet" href="./styles/footer.css" type="text/css"/>
-		<script type="text/javascript">
-			document.onclick = function(e){
-				var settings = document.getElementById('user-nav-id');
-			    var target = (e && e.target) || (event && event.srcElement);
-			    var display = 'none';
 
-			    while (target.parentNode) {
-
-			        if (target == settings) {
-			        	if (document.getElementById('sub-nav-user-navigation').style.display == 'block')
-			            	display ='none';
-			            else 
-			            	display = 'block'
-			            break;
-			        }
-			        target = target.parentNode;
-			    }
-
-				document.getElementById('sub-nav-user-navigation').style.display = display;
-
-			}
-		</script>
+        <script src="./script/header.js"></script>
+		
     </head>
     <body>
 
@@ -121,7 +102,7 @@ and open the template in the editor.
 		                <ul>
 		                    <li class="bottom-divider no-extra-space gnav-user with-pointer">
 		                        <a  href="viewprofile.php" id="sub-nav-user-menu-0">
-		                            <img class="avatar" src="../images/header/profile.png" style="background-size: 100px;" alt="">
+		                            <img class="avatar" src="./images/header/profile.png" style="background-size: 10px;" alt="">
 		                            <div class="details">
 		                                <p class="name">USER</p>
 		                                <div class="profile-link">
