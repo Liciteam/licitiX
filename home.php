@@ -115,9 +115,9 @@
 		                <ul>
 		                    <li class="bottom-divider no-extra-space gnav-user with-pointer">
 		                        <a  href="viewprofile.php" id="sub-nav-user-menu-0">
-		                            <img class="avatar" src="<?php if(isset($_SESSION['profile_picture'])) { 
-		                                						echo $_SESSION['profile_picture']; 
-		                                					} else echo '../images/header/profile.png' ?>" style="background-size: 100px;" alt="">
+		                            <img class="avatar" <?php if(isset($_SESSION['profile_picture'])) { 
+		                                						echo 'src="' . $_SESSION['profile_picture'] . '"'; 
+		                                					} else echo 'src="../images/header/profile.png"' ?> style="background-size: 100px;" alt="">
 		                            <div class="details">
 		                                <p class="name"><?php if(isset($_SESSION['name'])) { 
 		                                						echo $_SESSION['name']; 
@@ -152,7 +152,7 @@
 		                        </a>
 		                    </li>
 		                    <li>
-		                        <a class="sub-nav-text-link" href="home.php" id="sub-nav-user-menu-5">
+		                        <a class="sub-nav-text-link" href="add_item.html" id="sub-nav-user-menu-5">
 		                            Add an item
 		                        </a>
 		                    </li>

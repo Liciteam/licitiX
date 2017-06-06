@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+<?php if (session_id() == '' || !isset($_SESSION)) session_start(); ?>
+
+<!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -7,7 +9,7 @@ and open the template in the editor.
 <html>
     <head>
         <link rel="icon" href="images/icon.png" />
-        <title>Add your item - LicitiX</title>
+        <title>Item - LicitiX</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Buy or sell all types of items in our online auction">
@@ -17,35 +19,13 @@ and open the template in the editor.
         <link rel="stylesheet" href="./styles/global.css" type="text/css"/>
         <link rel="stylesheet" href="./styles/header.css" type="text/css"/>
         <link rel="stylesheet" href="./styles/nav_bar.css" type="text/css"/>
-        <link rel="stylesheet" href="./styles/add_item.css" type="text/css"/>
+        <link rel="stylesheet" href="./styles/item.css" type="text/css"/>
         <link rel="stylesheet" href="./styles/footer.css" type="text/css"/>
-		<script type="text/javascript">
-			document.onclick = function(e){
-				var settings = document.getElementById('user-nav-id');
-			    var target = (e && e.target) || (event && event.srcElement);
-			    var display = 'none';
-
-			    while (target.parentNode) {
-
-			        if (target == settings) {
-			        	if (document.getElementById('sub-nav-user-navigation').style.display == 'block')
-			            	display ='none';
-			            else 
-			            	display = 'block'
-			            break;
-			        }
-			        target = target.parentNode;
-			    }
-
-				document.getElementById('sub-nav-user-navigation').style.display = display;
-
-			}
-		</script>
+		
+		<script src="./script/header.js"></script>
     </head>
     <body>
-
-
-        <header>
+		<header>
 			<div class="container">
 				<div id="branding" class="nav-height">
 					<a href="home.php" aria-label="Licitix Logo">LicitiX</a>
@@ -73,9 +53,10 @@ and open the template in the editor.
                         	<input type="hidden" value="all" name="search_type" id="search-type">
                         </form>                    
                     </div>
-				</div>
+                </div>
 				<nav class="account-nav nav-height">
 					<ul>
+<?php if(isset($_SESSION['email'])) { ?>
 						<li class="activity">
 							<a href="home.php" class="nav-link" title="Home">
 	                            <span class="nav-icon"></span>
@@ -87,8 +68,8 @@ and open the template in the editor.
 						<li class="favorites">
 							<a href="home.php" class="nav-link" title="Favorites">
 	                            <span class="nav-icon"></span>
-	                            <span class="text-link">               	
-                                    Favorites
+	                            <span class="text-link">
+	                            	Favorites
 	                            </span>
                         	</a>
                         </li>
@@ -104,6 +85,25 @@ and open the template in the editor.
                         	</a>
 						</li>
 
+<?php } else { ?>
+						<li class="sell-on-licitix-link no-separator">
+	                        <a id="sell-on-licitix" class="sell-on-licitix-trigger nav-link" href="#" title="Sell on LictiX">
+	                            <span class="sell-copy">
+									Sell on LicitiX
+	                            </span>
+	                        </a>
+                    	</li>
+                    	<li class="register-link no-separator">
+	                        <a id="register" class="inline-overlay-trigger register-header-action select-register nav-link" rel="nofollow" href="#" title="Register" role="button" onclick="show_login_register_form('register')">
+	                            Register
+	                        </a>
+	                    </li>
+	                    <li class="sign-in-link no-separator">
+	                        <a id="sign-in" class="inline-overlay-trigger signin-header-action select-signin nav-link" rel="nofollow" href="#" title="Sign in" role="button" onclick="show_login_register_form('login')">
+	                            Sign in
+	                        </a>
+	                    </li>
+<?php }  ?>
 						<li class="cart" >
 							<a href="home.php" class="nav-link" title="Cart">
 	                            <span class="nav-icon"></span>
@@ -121,9 +121,9 @@ and open the template in the editor.
 		                <ul>
 		                    <li class="bottom-divider no-extra-space gnav-user with-pointer">
 		                        <a  href="viewprofile.php" id="sub-nav-user-menu-0">
-		                            <img class="avatar" src="../images/header/profile.png" style="background-size: 100px;" alt="">
+		                            <img class="avatar" src="https://img1.etsystatic.com/175/0/23958548/iusa_75x75.50054149_nnn8.jpg" alt="">
 		                            <div class="details">
-		                                <p class="name">USER</p>
+		                                <p class="name"><?php if(isset($_SESSION['name'])) { echo $_SESSION['name']; }?></p>
 		                                <div class="profile-link">
 		                                	<span id="profile-link-label" >View profile</span>
 		                                	<span class="gnav-icon gnav-right"></span>
@@ -154,7 +154,7 @@ and open the template in the editor.
 		                        </a>
 		                    </li>
 		                    <li>
-		                        <a class="sub-nav-text-link" href="add_item.html" id="sub-nav-user-menu-5">
+		                        <a class="sub-nav-text-link" href="home.php" id="sub-nav-user-menu-5">
 		                            Add an item
 		                        </a>
 		                    </li>
@@ -259,60 +259,13 @@ and open the template in the editor.
         </nav>        
         <br>
 
-        <form action="add_item_into_db.php"" method="POST" enctype="multipart/form-data">
-        
-        <strong><h1>Add your item</h1></strong><br>
-
-        <fieldset>
-        <legend> Images </legend>
-        <input type="file" name="image" />
-        </fieldset><br>
-        
-
-
-        <fieldset>
-        <legend> Details </legend>
-        Title :<br>
-        <input type="text" name="title" value=""/><br><br>
-        Short-description :<br> <textarea name="short_description" rows="2" cols="100"></textarea></br>
-        Key-words :<br> <textarea name="keywords" rows="2" cols="100"></textarea></br><br>
-        Category : <br>  <select name="Category">
-    <option value="Fashion">Fashion</option>
-    <option value="Electronics">Electronics</option>
-    <option value="Art">Art</option>
-    <option value="Sporting Goods">Sporting Goods</option>
-    <option value="Motors">Motors</option>
-    <option value="Estate">Estate</option>
-    <option value="Luxurya">Luxurya</option>
-    <option value="Antiques">Antiques</option>
-    <option value="Collectibles">Collectibles</option>
-  </select></br>
-  <br>
-    Description :<br> <textarea name="description" rows="5" cols="100"></textarea></br>
-    
-    </fieldset><br><br>
-
-    <fieldset>
-        <legend> Price & Date</legend>
-        Price :<br><input type="text" name="price" value=""/> €<br><br>
-        Start date: :<br><input type="date" name="startdate"/><br><br>
-        End date: :<br><input type="date" name="enddate"/><br><br>
-    </fieldset><br><br>
-
-
-
-   <input type="submit" name="sumit" value="Upload" /><br><br><br><br>
-
-        
-        </fieldset>
-        </form>
-        </body>
+	<body>
+    <?php
+        include 'show_item.php';
+      ?>
 
     <footer id = "footer">
-    <P class="blocktext">© Copyright 2017, All Rights Reserved</p>
+        <p class="blocktext">© Copyright 2017, All Rights Reserved</p>
     </footer>
+	</body>
 </html>
-
-                
-        
-  

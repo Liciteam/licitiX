@@ -1,51 +1,25 @@
-﻿<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php if (session_id() == '' || !isset($_SESSION)) session_start(); ?>
+
+<!DOCTYPE html>
 <html>
-    <head>
-        <link rel="icon" href="images/icon.png" />
-        <title>Add your item - LicitiX</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Buy or sell all types of items in our online auction">
-        <meta name="keywords" content="auction site, auction online, buy, sell, auction shop">
-        <meta name="authors" content="Alexandru Rusu, Claudia Lucasi, Cristian Iacob">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" href="images/icon.png" />
+		<title>LicitiX.com | Auction is life</title>
+		<meta name="description" content="Buy or sell all types of items in our online auction">
+		<meta name="keywords" content="auction site, auction online, buy, sell, auction shop">
+		<meta name="authors" content="Alexandru Rusu, Claudia Lucasi, Cristian Iacob">
 
-        <link rel="stylesheet" href="./styles/global.css" type="text/css"/>
-        <link rel="stylesheet" href="./styles/header.css" type="text/css"/>
-        <link rel="stylesheet" href="./styles/nav_bar.css" type="text/css"/>
-        <link rel="stylesheet" href="./styles/add_item.css" type="text/css"/>
-        <link rel="stylesheet" href="./styles/footer.css" type="text/css"/>
-		<script type="text/javascript">
-			document.onclick = function(e){
-				var settings = document.getElementById('user-nav-id');
-			    var target = (e && e.target) || (event && event.srcElement);
-			    var display = 'none';
-
-			    while (target.parentNode) {
-
-			        if (target == settings) {
-			        	if (document.getElementById('sub-nav-user-navigation').style.display == 'block')
-			            	display ='none';
-			            else 
-			            	display = 'block'
-			            break;
-			        }
-			        target = target.parentNode;
-			    }
-
-				document.getElementById('sub-nav-user-navigation').style.display = display;
-
-			}
-		</script>
-    </head>
-    <body>
-
-
-        <header>
+		<link rel="stylesheet" href="./styles/global.css" type="text/css"/>
+		<link rel="stylesheet" href="./styles/header.css" type="text/css"/>
+		<link rel="stylesheet" href="./styles/nav_bar.css" type="text/css"/>
+		<link rel="stylesheet" href="./styles/home.css" type="text/css"/>
+		
+		<script src="./script/header.js"></script>
+	</head>
+	<body>
+		<header>
 			<div class="container">
 				<div id="branding" class="nav-height">
 					<a href="home.php" aria-label="Licitix Logo">LicitiX</a>
@@ -73,9 +47,10 @@ and open the template in the editor.
                         	<input type="hidden" value="all" name="search_type" id="search-type">
                         </form>                    
                     </div>
-				</div>
+                </div>
 				<nav class="account-nav nav-height">
 					<ul>
+<?php if(isset($_SESSION['email'])) { ?>
 						<li class="activity">
 							<a href="home.php" class="nav-link" title="Home">
 	                            <span class="nav-icon"></span>
@@ -87,8 +62,8 @@ and open the template in the editor.
 						<li class="favorites">
 							<a href="home.php" class="nav-link" title="Favorites">
 	                            <span class="nav-icon"></span>
-	                            <span class="text-link">               	
-                                    Favorites
+	                            <span class="text-link">
+	                            	Favorites
 	                            </span>
                         	</a>
                         </li>
@@ -104,6 +79,25 @@ and open the template in the editor.
                         	</a>
 						</li>
 
+<?php } else { ?>
+						<li class="sell-on-licitix-link no-separator">
+	                        <a id="sell-on-licitix" class="sell-on-licitix-trigger nav-link" href="#" title="Sell on LictiX">
+	                            <span class="sell-copy">
+									Sell on LicitiX
+	                            </span>
+	                        </a>
+                    	</li>
+                    	<li class="register-link no-separator">
+	                        <a id="register" class="inline-overlay-trigger register-header-action select-register nav-link" rel="nofollow" href="#" title="Register" role="button" onclick="show_login_register_form('register')">
+	                            Register
+	                        </a>
+	                    </li>
+	                    <li class="sign-in-link no-separator">
+	                        <a id="sign-in" class="inline-overlay-trigger signin-header-action select-signin nav-link" rel="nofollow" href="#" title="Sign in" role="button" onclick="show_login_register_form('login')">
+	                            Sign in
+	                        </a>
+	                    </li>
+<?php }  ?>
 						<li class="cart" >
 							<a href="home.php" class="nav-link" title="Cart">
 	                            <span class="nav-icon"></span>
@@ -121,9 +115,9 @@ and open the template in the editor.
 		                <ul>
 		                    <li class="bottom-divider no-extra-space gnav-user with-pointer">
 		                        <a  href="viewprofile.php" id="sub-nav-user-menu-0">
-		                            <img class="avatar" src="../images/header/profile.png" style="background-size: 100px;" alt="">
+		                            <img class="avatar" src="https://img1.etsystatic.com/175/0/23958548/iusa_75x75.50054149_nnn8.jpg" alt="">
 		                            <div class="details">
-		                                <p class="name">USER</p>
+		                                <p class="name"><?php if(isset($_SESSION['name'])) { echo $_SESSION['name']; }?></p>
 		                                <div class="profile-link">
 		                                	<span id="profile-link-label" >View profile</span>
 		                                	<span class="gnav-icon gnav-right"></span>
@@ -154,7 +148,7 @@ and open the template in the editor.
 		                        </a>
 		                    </li>
 		                    <li>
-		                        <a class="sub-nav-text-link" href="add_item.html" id="sub-nav-user-menu-5">
+		                        <a class="sub-nav-text-link" href="home.php" id="sub-nav-user-menu-5">
 		                            Add an item
 		                        </a>
 		                    </li>
@@ -244,75 +238,62 @@ and open the template in the editor.
 
 		</header>
 
-        <nav id="menubar">
+		<nav id="menubar">
 			<div class="container">
 	            <a href="paginare.php?filtru=Fashion">Fashion</a>
 	            <a href="paginare.php?filtru=Electronics">Electronics</a>
 	            <a href="paginare.php?filtru=Art">Art</a>
-	            <a href="paginare.php?filtru=Sporting_Goods">Sporting Goods</a>
+	            <a href="paginare.php?filtru=Sporting Goods">Sporting Goods</a>
 	            <a href="paginare.php?filtru=Motors">Motors</a>
 	            <a href="paginare.php?filtru=Estate">Estate</a>
 	            <a href="paginare.php?filtru=Luxurya">Luxurya</a>
 	            <a href="paginare.php?filtru=Antiques">Antiques</a>
 	            <a href="paginare.php?filtru=Collectibles">Collectibles</a>
         	</div>
-        </nav>        
-        <br>
+        </nav>
 
-        <form action="add_item_into_db.php"" method="POST" enctype="multipart/form-data">
-        
-        <strong><h1>Add your item</h1></strong><br>
+<?php
+		$conn = mysql_connect("localhost", "root","" ) OR DIE('Unable to connect, fuck my life! ');
+		mysql_select_db("licitix", $conn);
 
-        <fieldset>
-        <legend> Images </legend>
-        <input type="file" name="image" />
-        </fieldset><br>
-        
+		if (!$conn) {
+	    	die('Eșec la conectare: ' . mysql_error());
+		}
+		else
+		{
+			
+					$email = $_SESSION['email'];
+
+			$result = mysql_query("SELECT * FROM users where email = '$email'",$conn);
 
 
-        <fieldset>
-        <legend> Details </legend>
-        Title :<br>
-        <input type="text" name="title" value=""/><br><br>
-        Short-description :<br> <textarea name="short_description" rows="2" cols="100"></textarea></br>
-        Key-words :<br> <textarea name="keywords" rows="2" cols="100"></textarea></br><br>
-        Category : <br>  <select name="Category">
-    <option value="Fashion">Fashion</option>
-    <option value="Electronics">Electronics</option>
-    <option value="Art">Art</option>
-    <option value="Sporting Goods">Sporting Goods</option>
-    <option value="Motors">Motors</option>
-    <option value="Estate">Estate</option>
-    <option value="Luxurya">Luxurya</option>
-    <option value="Antiques">Antiques</option>
-    <option value="Collectibles">Collectibles</option>
-  </select></br>
-  <br>
-    Description :<br> <textarea name="description" rows="5" cols="100"></textarea></br>
-    
+				while($row3 = mysql_fetch_array($result))
+				{ 
+				$name=$row3['name'];
+				$email=$row3['email'];
+				$address=$row3['adress'];
+				}
+		}
+?>
+
+ <form action="update_user_information.php"" method="POST" enctype="multipart/form-data">
+ <strong><h1>Edit your profile</h1></strong><br>
+     <fieldset>
+        <legend> Your personal details</legend>
+        Name :<br><textarea name="name" rows="2" cols="50"><?php echo $name ?></textarea><br><br>
+        Email :<br><textarea name="email" rows="2" cols="50"><?php echo $email ?></textarea><br><br>
+        Old password :<br><input type="password" name="psw_old"><br><br>
+        Change password :<br><input type="password" name="psw"><br><br>
+        Address :<br><textarea name="address" rows="2" cols="50"><?php echo $address ?></textarea><br><br>
     </fieldset><br><br>
+   <input type="submit" name="sumit" value="Update" /><br><br><br><br>
+   </form>
 
-    <fieldset>
-        <legend> Price & Date</legend>
-        Price :<br><input type="text" name="price" value=""/> €<br><br>
-        Start date: :<br><input type="date" name="startdate"/><br><br>
-        End date: :<br><input type="date" name="enddate"/><br><br>
-    </fieldset><br><br>
-
-
-
-   <input type="submit" name="sumit" value="Upload" /><br><br><br><br>
-
-        
-        </fieldset>
-        </form>
-        </body>
-
-    <footer id = "footer">
-    <P class="blocktext">© Copyright 2017, All Rights Reserved</p>
-    </footer>
-</html>
-
-                
-        
-  
+   <style type="text/css">
+   	form {
+  width: 1000px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+   </style>

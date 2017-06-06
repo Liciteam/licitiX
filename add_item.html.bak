@@ -120,8 +120,8 @@ and open the template in the editor.
 		            <div class="sub-nav user" id="sub-nav-user-navigation" >
 		                <ul>
 		                    <li class="bottom-divider no-extra-space gnav-user with-pointer">
-		                        <a  href="viewprofile.php" id="sub-nav-user-menu-0">
-		                            <img class="avatar" src="../images/header/profile.png" style="background-size: 100px;" alt="">
+		                        <a  href="home.html" id="sub-nav-user-menu-0">
+		                            <img class="avatar" src="https://img1.etsystatic.com/175/0/23958548/iusa_75x75.50054149_nnn8.jpg" alt="">
 		                            <div class="details">
 		                                <p class="name">USER</p>
 		                                <div class="profile-link">

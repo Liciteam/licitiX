@@ -127,9 +127,13 @@ and open the template in the editor.
 		                <ul>
 		                    <li class="bottom-divider no-extra-space gnav-user with-pointer">
 		                        <a  href="viewprofile.php" id="sub-nav-user-menu-0">
-		                            <img class="avatar" src="https://img1.etsystatic.com/175/0/23958548/iusa_75x75.50054149_nnn8.jpg" alt="">
+		                            <img class="avatar" <?php if(isset($_SESSION['profile_picture'])) { 
+		                                						echo 'src="' . $_SESSION['profile_picture'] . '"'; 
+		                                					} else echo 'src="../images/header/profile.png"' ?> style="background-size: 100px;" alt="">
 		                            <div class="details">
-		                                <p class="name"><?php if(isset($_SESSION['name'])) { echo $_SESSION['name']; }?></p>
+		                                <p class="name"><?php if(isset($_SESSION['name'])) { 
+		                                						echo $_SESSION['name']; 
+		                                					} else if(isset($_SESSION['email'])) echo "Welcome " . $_SESSION['email'] ?></p>
 		                                <div class="profile-link">
 		                                	<span id="profile-link-label" >View profile</span>
 		                                	<span class="gnav-icon gnav-right"></span>
@@ -160,7 +164,7 @@ and open the template in the editor.
 		                        </a>
 		                    </li>
 		                    <li>
-		                        <a class="sub-nav-text-link" href="home.php" id="sub-nav-user-menu-5">
+		                        <a class="sub-nav-text-link" href="add_item.html" id="sub-nav-user-menu-5">
 		                            Add an item
 		                        </a>
 		                    </li>
